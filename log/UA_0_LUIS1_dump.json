@@ -200,8 +200,8 @@
             "Index" : 0,
             "MonitoredItems" : [],
             "NumberOfBadItems" : 0,
-            "NumberOfGoodItems" : 16,
-            "NumberOfItems" : 16
+            "NumberOfGoodItems" : 21,
+            "NumberOfItems" : 21
          },
          "IsUnsolicited" : true,
          "LifeTimeCount" : 180,
@@ -216,8 +216,8 @@
       }
    ],
    "TotalNumberOfBadItems" : 0,
-   "TotalNumberOfGoodItems" : 16,
-   "TotalNumberOfItems" : 16,
+   "TotalNumberOfGoodItems" : 21,
+   "TotalNumberOfItems" : 21,
    "UaSessionSettings" : 
    {
       "BrowsingSettings" : 

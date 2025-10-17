@@ -1,7 +1,7 @@
-PID: 2812, 0xafc
+PID: 17508, 0x4464
 Service ID: MASTER_UA_0
 Process ID: MASTER_UA_0
 C:\Program Files (x86)\Proficy\Proficy CIMPLICITY\exe\CimOpcUaClient.exe 12.10 (54287)
-Initial startup took 152 milliseconds
+Initial startup took 147 milliseconds
 Display all head points information
 device : LUIS1

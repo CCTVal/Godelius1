@@ -1,11 +1,11 @@
-PID: 11916, 0x2e8c
+PID: 23968, 0x5da0
 Service ID: MASTER_PTDP_RP
 Process ID: MASTER_PTDP_RP
 Hash size: PTMDP_POINT_HASH_SIZE == 1001
 Hash size: PTMDP_POINT_ENUM_HASH_SIZE == 11
           Date/Time(UTC);  Status;                        Procedure;               Source;       Code;  Reference;  Thread ID; Message 
-2025-10-17T18:12:32.6218; success;              ptmdp_config_init();              Unknown;          0;          0;      24196;  Time taken for config initialization(  0.020 seconds);  
-2025-10-17T18:12:32.6616; success;               ptmdp_dep_struct();              Unknown;          0;          0;      24196; Time taken for building the dependency structure(  0.000 seconds); Derived Points Count(0) 
-2025-10-17T18:12:32.6636; success;                  ptmdp_sl_init();              Unknown;          0;          0;      24196; Time taken for initializing the shopping lists ( 0.000 seconds)  
-2025-10-17T18:12:32.7021; success;                 ptmdp_sl_build();              Unknown;          0;          0;      24196; Time taken for populating the shopping lists( 0.038 seconds) for all PTMDP Points Count(0) 
-2025-10-17T18:12:32.7185; success;                           Main();              Unknown;          0;          0;      24196; ptmdp is ready to process requests; Time taken for initialization(  0.152 seconds);  
+2025-10-17T18:23:01.7377; success;              ptmdp_config_init();              Unknown;          0;          0;      15872;  Time taken for config initialization(  0.006 seconds);  
+2025-10-17T18:23:01.7402; success;               ptmdp_dep_struct();              Unknown;          0;          0;      15872; Time taken for building the dependency structure(  0.000 seconds); Derived Points Count(0) 
+2025-10-17T18:23:01.7416; success;                  ptmdp_sl_init();              Unknown;          0;          0;      15872; Time taken for initializing the shopping lists ( 0.000 seconds)  
+2025-10-17T18:23:01.7778; success;                 ptmdp_sl_build();              Unknown;          0;          0;      15872; Time taken for populating the shopping lists( 0.035 seconds) for all PTMDP Points Count(0) 
+2025-10-17T18:23:01.7903; success;                           Main();              Unknown;          0;          0;      15872; ptmdp is ready to process requests; Time taken for initialization(  0.092 seconds);  
