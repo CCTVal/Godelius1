@@ -1,0 +1,14 @@
+PID: 8840, 0x2288
+Service ID: PTX_RP
+Process ID: PTX_RP
+Hash size: PTX_POINT_TYPE_HASH_SIZE == 42
+Hash size: PTX_PTMGMT_HASH_SIZE == 11
+Hash size: PTX_POINT_HASH_SIZE == 10009
+Hash size: PTX_DEVICE_HASH_SIZE == 67
+Hash size: PTX_ES_POINT_HASH_SIZE == 10009
+Hash size: PTX_UF_SET_HASH_SIZE == 11
+Hash size: PTX_TREND_PT_HASH_SIZE == 101
+Hash size: PTX_FR_HASH_SIZE == 101
+          Date/Time(UTC);  Status;                        Procedure;               Source;       Code;  Reference;  Thread ID; Message 
+2025-10-17T18:12:32.1291; success; CimClassManager_InitializeClassC;              Unknown;          0;          0;       9912; Time taken for InitializeClassCaching (  0.001 seconds); 
+2025-10-17T18:12:32.1346; success;                           Main();              Unknown;          0;          0;       9912; ptx_rp is ready to process requests; Time taken for initialization(  5.191 seconds);  

@@ -1,0 +1,755 @@
+{
+   "CimplicityOpcUaConfiguration" : 
+   {
+      "ApplicationName" : "Proficy HMI SCADA - CIMPLICITY",
+      "ApplicationUri" : 
+      {
+         "#include" : "%CIMPATH%\\..\\data\\OpcUaCertificatesConfig.json:ApplicationUri"
+      },
+      "FloatsAre8bytes" : true,
+      "GdsSessionSettings" : 
+      {
+         "BrowsingSettings" : 
+         {
+            "MaxReferencesToReturn" : 100
+         },
+         "UaConnectionSettings" : 
+         {
+            "CommunicationSecurityMode" : 
+            {
+               "MessageSecurityMode" : "None",
+               "SecurityPolicy" : ""
+            },
+            "DiscoveryType" : 0,
+            "DiscoveryUrl" : "opc.tcp://localhost:59410",
+            "InstanceCertificateConfig" : 
+            {
+               "#include" : "%CIMPATH%\\..\\data\\OpcUaCertificatesConfig.json:CertificatesConfiguration.InstanceCertificateConfig"
+            },
+            "PkiConfiguration" : 
+            {
+               "#include" : "%CIMPATH%\\..\\data\\OpcUaCertificatesConfig.json:CertificatesConfiguration.PkiConfiguration",
+               "OpenSslIssuersCertificatesLocation" : "C:\\Users\\vsaon\\OneDrive\\Documents\\Godelius\\cimplicity tests\\LuisTest\\\\pki\\issuers\\certs\\",
+               "OpenSslIssuersRevocationListLocation" : "C:\\Users\\vsaon\\OneDrive\\Documents\\Godelius\\cimplicity tests\\LuisTest\\\\pki\\issuers\\crl\\",
+               "OpenSslRevokedCertificateslocation" : "C:\\Users\\vsaon\\OneDrive\\Documents\\Godelius\\cimplicity tests\\LuisTest\\\\pki\\trusted\\crl\\",
+               "OpenSslTrustedCertificatesLocation" : "C:\\Users\\vsaon\\OneDrive\\Documents\\Godelius\\cimplicity tests\\LuisTest\\\\pki\\trusted\\certs\\",
+               "StoreType" : "Directory",
+               "WindowsCertificateStoreName" : "UA Applications",
+               "WindowsIssuersCertificateStoreName" : "UA Applications",
+               "WindowsStoreLocationType" : "LocalMachine"
+            },
+            "RejectedCertificatesLocation" : 
+            {
+               "#include" : "%CIMPATH%\\..\\data\\OpcUaCertificatesConfig.json:CertificatesConfiguration.RejectedCertificatesLocation"
+            },
+            "ServerName" : "",
+            "ServerUri" : "",
+            "endpointUrl" : "opc.tcp://localhost:59410"
+         },
+         "UserIdentity" : 
+         {
+            "Certificate" : 
+            {
+               "#include" : "%CIMPATH%\\..\\data\\OpcUaCertificatesConfig.json:UserIdentityCertificate"
+            },
+            "Password" : "",
+            "TokenType" : "Anonymous",
+            "UserName" : ""
+         }
+      },
+      "PasswordCertificateConfig" : 
+      {
+         "GenerateSelfSigned" : true,
+         "OpenSslCertificateFileName" : "%SITE_ROOT%/pki/own/certs/Proficy HMI SCADA - CIMPLICITY (Password).der",
+         "OpenSslCertificatePrivateKeyFileName" : "%SITE_ROOT%/pki/own/private/Proficy HMI SCADA - CIMPLICITY (Password).pem",
+         "SelfSignedCertificateFields" : 
+         {
+            "Country" : "",
+            "Locality" : "",
+            "NodeName" : "[NodeName]",
+            "Organization" : "GE",
+            "OrganizationUnit" : "IP",
+            "State" : "",
+            "SubjectName" : "Proficy HMI SCADA - CIMPLICITY (Password)",
+            "Uri" : "urn:[NodeName]:GE-IP:CIMPLICITY",
+            "ValidityDurationInSeconds" : 157680000
+         },
+         "StoreType" : "Windows",
+         "WindowsCertificateName" : "",
+         "WindowsCertificateStoreName" : "UA Applications",
+         "WindowsCertificateThumbprint" : "",
+         "WindowsStoreLocationType" : "LocalMachine"
+      },
+      "Ports" : 
+      [
+         {
+            "ApplicationName" : "Proficy HMI SCADA - CIMPLICITY",
+            "ApplicationUri" : 
+            {
+               "#include" : "%CIMPATH%\\..\\data\\OpcUaCertificatesConfig.json:ApplicationUri"
+            },
+            "InstanceCertificateConfig" : 
+            {
+               "#include" : "%CIMPATH%\\..\\data\\OpcUaCertificatesConfig.json:CertificatesConfiguration.InstanceCertificateConfig"
+            },
+            "MiscParameters" : 
+            {
+               "CircularLog" : true,
+               "DataChangeQueueLimit" : 25000,
+               "LogFileSize" : 104857600,
+               "TraceLevel" : 3
+            },
+            "OpcUaDevices" : 
+            [
+               {
+                  "ApplicationName" : "Proficy HMI SCADA - CIMPLICITY",
+                  "ApplicationUri" : 
+                  {
+                     "#include" : "%CIMPATH%\\..\\data\\OpcUaCertificatesConfig.json:ApplicationUri"
+                  },
+                  "DefaultSubscription" : 
+                  {
+                     "AllowMixedSamplingIntervals" : false,
+                     "AllowZeroSamplingIntervals" : false,
+                     "DefaultDiscardOldest" : true,
+                     "DefaultQueueSize" : 10,
+                     "Info" : 
+                     {
+                        "DomainIndex" : 0,
+                        "FullName" : "DEFAULTUNSO",
+                        "Index" : 0,
+                        "MonitoredItems" : [],
+                        "NumberOfBadItems" : 0,
+                        "NumberOfGoodItems" : 0,
+                        "NumberOfItems" : 0
+                     },
+                     "IsUnsolicited" : true,
+                     "LifeTimeCount" : 180,
+                     "MaxAge" : 50,
+                     "MaxAgeType" : "Percent",
+                     "MaxDomainLength" : 32767,
+                     "MaxKeepAliveCount" : 60,
+                     "MaxNotificationsPerPublish" : 1000,
+                     "MaxNumberOfMonitoredItems" : 32767,
+                     "PublishingInterval" : 1000.0,
+                     "SubscriptionName" : "DEFAULTUNSO"
+                  },
+                  "DeviceEnabled" : true,
+                  "DeviceId" : "DefaultDeviceConfiguration",
+                  "MiscParameters" : 
+                  {
+                     "AllowArraySizeMismatch" : true,
+                     "AsyncWrite" : false,
+                     "CircularLog" : true,
+                     "DumpSubscriptionsAtStartup" : 3,
+                     "LogFileSize" : 104857600,
+                     "OPCUAClientUseIndexRange" : true,
+                     "TimeStampsToUse" : "source",
+                     "TraceAll" : false,
+                     "TraceConnection" : true,
+                     "TraceDataChanges" : true,
+                     "TraceDequeue" : true,
+                     "TraceEvents" : true,
+                     "TraceGroupActivity" : true,
+                     "TraceItemActivity" : true,
+                     "TraceLevel" : 3,
+                     "TracePolling" : true,
+                     "TraceWriting" : true,
+                     "callTimeout" : 5000,
+                     "connectionTimeout" : 5000,
+                     "delayAfterConnection" : 5,
+                     "discoveryTimeout" : 5000,
+                     "publishTimeout" : 70000,
+                     "reconnectionAttemptInterval" : 1000,
+                     "returnDiagnostics" : 0,
+                     "serverStatusReadInterval" : 5000,
+                     "serverStatusReadTimeout" : 5000,
+                     "sessionTimeout" : 1200000
+                  },
+                  "NamespaceArray" : [],
+                  "NumberOfDomains" : 0,
+                  "NumberOfSubscriptions" : 0,
+                  "ProductUri" : "http://ge-ip.com/CIMPLICITY",
+                  "RedundancySettings" : 
+                  {
+                     "PrimaryNetwork1" : "",
+                     "PrimaryNetwork2" : "",
+                     "RedundancySettings" : null,
+                     "RedundancySupport" : 0,
+                     "SecondaryNetwork1" : "",
+                     "SecondaryNetwork2" : ""
+                  },
+                  "Subscriptions" : 
+                  [
+                     {
+                        "AllowMixedSamplingIntervals" : false,
+                        "AllowZeroSamplingIntervals" : false,
+                        "DefaultDiscardOldest" : true,
+                        "DefaultQueueSize" : 10,
+                        "Info" : 
+                        {
+                           "DomainIndex" : 0,
+                           "FullName" : "DEFAULTPOLL",
+                           "Index" : 0,
+                           "MonitoredItems" : [],
+                           "NumberOfBadItems" : 0,
+                           "NumberOfGoodItems" : 0,
+                           "NumberOfItems" : 0
+                        },
+                        "IsUnsolicited" : false,
+                        "LifeTimeCount" : 180,
+                        "MaxAge" : 50,
+                        "MaxAgeType" : "Percent",
+                        "MaxDomainLength" : 32767,
+                        "MaxKeepAliveCount" : 60,
+                        "MaxNotificationsPerPublish" : 1000,
+                        "MaxNumberOfMonitoredItems" : 32767,
+                        "PublishingInterval" : 1000.0,
+                        "SubscriptionName" : "DEFAULTPOLL"
+                     },
+                     {
+                        "AllowMixedSamplingIntervals" : false,
+                        "AllowZeroSamplingIntervals" : false,
+                        "DefaultDiscardOldest" : true,
+                        "DefaultQueueSize" : 10,
+                        "Info" : 
+                        {
+                           "DomainIndex" : 0,
+                           "FullName" : "DEFAULTUNSO",
+                           "Index" : 0,
+                           "MonitoredItems" : [],
+                           "NumberOfBadItems" : 0,
+                           "NumberOfGoodItems" : 0,
+                           "NumberOfItems" : 0
+                        },
+                        "IsUnsolicited" : true,
+                        "LifeTimeCount" : 180,
+                        "MaxAge" : 50,
+                        "MaxAgeType" : "Percent",
+                        "MaxDomainLength" : 32767,
+                        "MaxKeepAliveCount" : 60,
+                        "MaxNotificationsPerPublish" : 1000,
+                        "MaxNumberOfMonitoredItems" : 32767,
+                        "PublishingInterval" : 1000.0,
+                        "SubscriptionName" : "DEFAULTUNSO"
+                     }
+                  ],
+                  "TotalNumberOfBadItems" : 0,
+                  "TotalNumberOfGoodItems" : 0,
+                  "TotalNumberOfItems" : 0,
+                  "UaSessionSettings" : 
+                  {
+                     "BrowsingSettings" : 
+                     {
+                        "MaxReferencesToReturn" : 100
+                     },
+                     "UaConnectionSettings" : 
+                     {
+                        "CommunicationSecurityMode" : 
+                        {
+                           "MessageSecurityMode" : "None",
+                           "SecurityPolicy" : "http://opcfoundation.org/UA/SecurityPolicy#None"
+                        },
+                        "DiscoveryType" : 0,
+                        "DiscoveryUrl" : "opc.tcp://localhost:4840",
+                        "InstanceCertificateConfig" : 
+                        {
+                           "#include" : "%CIMPATH%\\..\\data\\OpcUaCertificatesConfig.json:CertificatesConfiguration.InstanceCertificateConfig"
+                        },
+                        "PkiConfiguration" : 
+                        {
+                           "#include" : "%CIMPATH%\\..\\data\\OpcUaCertificatesConfig.json:CertificatesConfiguration.PkiConfiguration"
+                        },
+                        "RejectedCertificatesLocation" : 
+                        {
+                           "#include" : "%CIMPATH%\\..\\data\\OpcUaCertificatesConfig.json:CertificatesConfiguration.RejectedCertificatesLocation"
+                        },
+                        "ServerName" : "",
+                        "ServerUri" : "",
+                        "endpointUrl" : "opc.tcp://localhost:4841"
+                     },
+                     "UserIdentity" : 
+                     {
+                        "Certificate" : 
+                        {
+                           "#include" : "%CIMPATH%\\..\\data\\OpcUaCertificatesConfig.json:UserIdentityCertificate"
+                        },
+                        "Password" : "",
+                        "TokenType" : "Anonymous",
+                        "UserName" : ""
+                     }
+                  },
+                  "Version" : "1.0"
+               }
+            ],
+            "PkiConfiguration" : 
+            {
+               "#include" : "%CIMPATH%\\..\\data\\OpcUaCertificatesConfig.json:CertificatesConfiguration.PkiConfiguration"
+            },
+            "PortId" : "DefaultPortConfiguration",
+            "ProductUri" : "http://ge-ip.com/CIMPLICITY",
+            "RejectedCertificatesLocation" : 
+            {
+               "#include" : "%CIMPATH%\\..\\data\\OpcUaCertificatesConfig.json:CertificatesConfiguration.RejectedCertificatesLocation"
+            },
+            "Version" : "1.0"
+         },
+         {
+            "ApplicationName" : "Proficy HMI SCADA - CIMPLICITY",
+            "ApplicationUri" : 
+            {
+               "#include" : "%CIMPATH%\\..\\data\\OpcUaCertificatesConfig.json:ApplicationUri"
+            },
+            "InstanceCertificateConfig" : 
+            {
+               "#include" : "%CIMPATH%\\..\\data\\OpcUaCertificatesConfig.json:CertificatesConfiguration.InstanceCertificateConfig"
+            },
+            "MiscParameters" : 
+            {
+               "CircularLog" : true,
+               "DataChangeQueueLimit" : 25000,
+               "LogFileSize" : 104857600,
+               "TraceLevel" : 3
+            },
+            "OpcUaDevices" : 
+            [
+               {
+                  "ApplicationName" : "Proficy HMI SCADA - CIMPLICITY",
+                  "ApplicationUri" : 
+                  {
+                     "#include" : "%CIMPATH%\\..\\data\\OpcUaCertificatesConfig.json:ApplicationUri"
+                  },
+                  "DefaultSubscription" : 
+                  {
+                     "AllowMixedSamplingIntervals" : false,
+                     "AllowZeroSamplingIntervals" : false,
+                     "DefaultDiscardOldest" : true,
+                     "DefaultQueueSize" : 10,
+                     "Info" : 
+                     {
+                        "DomainIndex" : 0,
+                        "FullName" : "DEFAULTUNSO",
+                        "Index" : 0,
+                        "MonitoredItems" : [],
+                        "NumberOfBadItems" : 0,
+                        "NumberOfGoodItems" : 0,
+                        "NumberOfItems" : 0
+                     },
+                     "IsUnsolicited" : true,
+                     "LifeTimeCount" : 180,
+                     "MaxAge" : 50,
+                     "MaxAgeType" : "Percent",
+                     "MaxDomainLength" : 32767,
+                     "MaxKeepAliveCount" : 60,
+                     "MaxNotificationsPerPublish" : 1000,
+                     "MaxNumberOfMonitoredItems" : 32767,
+                     "PublishingInterval" : 1000.0,
+                     "SubscriptionName" : "DEFAULTUNSO"
+                  },
+                  "DeviceEnabled" : true,
+                  "DeviceId" : "DefaultDeviceConfiguration",
+                  "GdsSessionSettings" : 
+                  {
+                     "BrowsingSettings" : 
+                     {
+                        "MaxReferencesToReturn" : 100
+                     },
+                     "UaConnectionSettings" : 
+                     {
+                        "CommunicationSecurityMode" : 
+                        {
+                           "MessageSecurityMode" : "None",
+                           "SecurityPolicy" : "http://opcfoundation.org/UA/SecurityPolicy#None"
+                        },
+                        "DiscoveryType" : 1,
+                        "DiscoveryUrl" : "opc.tcp://localhost:4840",
+                        "InstanceCertificateConfig" : 
+                        {
+                           "#include" : "%CIMPATH%\\..\\data\\OpcUaCertificatesConfig.json:CertificatesConfiguration.InstanceCertificateConfig"
+                        },
+                        "PkiConfiguration" : 
+                        {
+                           "OpenSslIssuersCertificatesLocation" : "C:\\Users\\vsaon\\OneDrive\\Documents\\Godelius\\cimplicity tests\\LuisTest\\\\pki\\issuers\\certs\\",
+                           "OpenSslIssuersRevocationListLocation" : "C:\\Users\\vsaon\\OneDrive\\Documents\\Godelius\\cimplicity tests\\LuisTest\\\\pki\\issuers\\crl\\",
+                           "OpenSslRevokedCertificateslocation" : "C:\\Users\\vsaon\\OneDrive\\Documents\\Godelius\\cimplicity tests\\LuisTest\\\\pki\\trusted\\crl\\",
+                           "OpenSslTrustedCertificatesLocation" : "C:\\Users\\vsaon\\OneDrive\\Documents\\Godelius\\cimplicity tests\\LuisTest\\\\pki\\trusted\\certs\\",
+                           "StoreType" : "Directory",
+                           "WindowsCertificateStoreName" : "UA Applications",
+                           "WindowsIssuersCertificateStoreName" : "Root",
+                           "WindowsStoreLocationType" : "LocalMachine"
+                        },
+                        "RejectedCertificatesLocation" : 
+                        {
+                           "#include" : "%CIMPATH%\\..\\data\\OpcUaCertificatesConfig.json:CertificatesConfiguration.RejectedCertificatesLocation"
+                        },
+                        "ServerName" : "",
+                        "ServerUri" : "",
+                        "endpointUrl" : "opc.tcp://localhost:4841"
+                     },
+                     "UserIdentity" : 
+                     {
+                        "Certificate" : 
+                        {
+                           "#include" : "%CIMPATH%\\..\\data\\OpcUaCertificatesConfig.json:UserIdentityCertificate"
+                        },
+                        "Password" : "",
+                        "TokenType" : "Anonymous",
+                        "UserName" : ""
+                     }
+                  },
+                  "MiscParameters" : 
+                  {
+                     "AllowArraySizeMismatch" : true,
+                     "AsyncWrite" : false,
+                     "CircularLog" : true,
+                     "DumpSubscriptionsAtStartup" : 3,
+                     "LogFileSize" : 104857600,
+                     "OPCUAClientUseIndexRange" : true,
+                     "TimeStampsToUse" : "source",
+                     "TraceAll" : false,
+                     "TraceConnection" : true,
+                     "TraceDataChanges" : true,
+                     "TraceDequeue" : true,
+                     "TraceEvents" : true,
+                     "TraceGroupActivity" : true,
+                     "TraceItemActivity" : true,
+                     "TraceLevel" : 3,
+                     "TracePolling" : true,
+                     "TraceWriting" : true,
+                     "callTimeout" : 5000,
+                     "connectionTimeout" : 5000,
+                     "delayAfterConnection" : 5,
+                     "discoveryTimeout" : 5000,
+                     "publishTimeout" : 70000,
+                     "reconnectionAttemptInterval" : 1000,
+                     "returnDiagnostics" : 0,
+                     "serverStatusReadInterval" : 5000,
+                     "serverStatusReadTimeout" : 5000,
+                     "sessionTimeout" : 1200000
+                  },
+                  "NamespaceArray" : [],
+                  "NumberOfDomains" : 0,
+                  "NumberOfSubscriptions" : 0,
+                  "ProductUri" : "http://ge-ip.com/CIMPLICITY",
+                  "RedundancySettings" : 
+                  {
+                     "PrimaryNetwork1" : "",
+                     "PrimaryNetwork2" : "",
+                     "RedundancySettings" : null,
+                     "RedundancySupport" : 0,
+                     "SecondaryNetwork1" : "",
+                     "SecondaryNetwork2" : ""
+                  },
+                  "Subscriptions" : 
+                  [
+                     {
+                        "AllowMixedSamplingIntervals" : false,
+                        "AllowZeroSamplingIntervals" : false,
+                        "DefaultDiscardOldest" : true,
+                        "DefaultQueueSize" : 10,
+                        "Info" : 
+                        {
+                           "DomainIndex" : 0,
+                           "FullName" : "DEFAULTPOLL",
+                           "Index" : 0,
+                           "MonitoredItems" : [],
+                           "NumberOfBadItems" : 0,
+                           "NumberOfGoodItems" : 0,
+                           "NumberOfItems" : 0
+                        },
+                        "IsUnsolicited" : false,
+                        "LifeTimeCount" : 180,
+                        "MaxAge" : 50,
+                        "MaxAgeType" : "Percent",
+                        "MaxDomainLength" : 32767,
+                        "MaxKeepAliveCount" : 60,
+                        "MaxNotificationsPerPublish" : 1000,
+                        "MaxNumberOfMonitoredItems" : 32767,
+                        "PublishingInterval" : 1000.0,
+                        "SubscriptionName" : "DEFAULTPOLL"
+                     },
+                     {
+                        "AllowMixedSamplingIntervals" : false,
+                        "AllowZeroSamplingIntervals" : false,
+                        "DefaultDiscardOldest" : true,
+                        "DefaultQueueSize" : 10,
+                        "Info" : 
+                        {
+                           "DomainIndex" : 0,
+                           "FullName" : "DEFAULTUNSO",
+                           "Index" : 0,
+                           "MonitoredItems" : [],
+                           "NumberOfBadItems" : 0,
+                           "NumberOfGoodItems" : 0,
+                           "NumberOfItems" : 0
+                        },
+                        "IsUnsolicited" : true,
+                        "LifeTimeCount" : 180,
+                        "MaxAge" : 50,
+                        "MaxAgeType" : "Percent",
+                        "MaxDomainLength" : 32767,
+                        "MaxKeepAliveCount" : 60,
+                        "MaxNotificationsPerPublish" : 1000,
+                        "MaxNumberOfMonitoredItems" : 32767,
+                        "PublishingInterval" : 1000.0,
+                        "SubscriptionName" : "DEFAULTUNSO"
+                     }
+                  ],
+                  "TotalNumberOfBadItems" : 0,
+                  "TotalNumberOfGoodItems" : 0,
+                  "TotalNumberOfItems" : 0,
+                  "UaSessionSettings" : 
+                  {
+                     "BrowsingSettings" : 
+                     {
+                        "MaxReferencesToReturn" : 100
+                     },
+                     "UaConnectionSettings" : 
+                     {
+                        "CommunicationSecurityMode" : 
+                        {
+                           "MessageSecurityMode" : "None",
+                           "SecurityPolicy" : "http://opcfoundation.org/UA/SecurityPolicy#None"
+                        },
+                        "DiscoveryType" : 0,
+                        "DiscoveryUrl" : "opc.tcp://localhost:4840",
+                        "InstanceCertificateConfig" : 
+                        {
+                           "#include" : "%CIMPATH%\\..\\data\\OpcUaCertificatesConfig.json:CertificatesConfiguration.InstanceCertificateConfig"
+                        },
+                        "PkiConfiguration" : 
+                        {
+                           "OpenSslIssuersCertificatesLocation" : "C:\\Users\\vsaon\\OneDrive\\Documents\\Godelius\\cimplicity tests\\LuisTest\\\\pki\\issuers\\certs\\",
+                           "OpenSslIssuersRevocationListLocation" : "C:\\Users\\vsaon\\OneDrive\\Documents\\Godelius\\cimplicity tests\\LuisTest\\\\pki\\issuers\\crl\\",
+                           "OpenSslRevokedCertificateslocation" : "C:\\Users\\vsaon\\OneDrive\\Documents\\Godelius\\cimplicity tests\\LuisTest\\\\pki\\trusted\\crl\\",
+                           "OpenSslTrustedCertificatesLocation" : "C:\\Users\\vsaon\\OneDrive\\Documents\\Godelius\\cimplicity tests\\LuisTest\\\\pki\\trusted\\certs\\",
+                           "StoreType" : "Directory",
+                           "WindowsCertificateStoreName" : "UA Applications",
+                           "WindowsIssuersCertificateStoreName" : "UA Applications",
+                           "WindowsStoreLocationType" : "LocalMachine"
+                        },
+                        "RejectedCertificatesLocation" : 
+                        {
+                           "#include" : "%CIMPATH%\\..\\data\\OpcUaCertificatesConfig.json:CertificatesConfiguration.RejectedCertificatesLocation"
+                        },
+                        "ServerName" : "",
+                        "ServerUri" : "",
+                        "endpointUrl" : "opc.tcp://localhost:4841"
+                     },
+                     "UserIdentity" : 
+                     {
+                        "Certificate" : 
+                        {
+                           "#include" : "%CIMPATH%\\..\\data\\OpcUaCertificatesConfig.json:UserIdentityCertificate"
+                        },
+                        "Password" : "",
+                        "TokenType" : "Anonymous",
+                        "UserName" : ""
+                     }
+                  },
+                  "Version" : "1.0"
+               },
+               {
+                  "ApplicationName" : "Proficy HMI SCADA - CIMPLICITY",
+                  "ApplicationUri" : 
+                  {
+                     "#include" : "%CIMPATH%\\..\\data\\OpcUaCertificatesConfig.json:ApplicationUri"
+                  },
+                  "DefaultSubscription" : 
+                  {
+                     "AllowMixedSamplingIntervals" : false,
+                     "AllowZeroSamplingIntervals" : false,
+                     "DefaultDiscardOldest" : true,
+                     "DefaultQueueSize" : 10,
+                     "Info" : 
+                     {
+                        "DomainIndex" : 0,
+                        "FullName" : "DEFAULTUNSO",
+                        "Index" : 0,
+                        "MonitoredItems" : [],
+                        "NumberOfBadItems" : 0,
+                        "NumberOfGoodItems" : 0,
+                        "NumberOfItems" : 0
+                     },
+                     "IsUnsolicited" : true,
+                     "LifeTimeCount" : 180,
+                     "MaxAge" : 50,
+                     "MaxAgeType" : "Percent",
+                     "MaxDomainLength" : 32767,
+                     "MaxKeepAliveCount" : 60,
+                     "MaxNotificationsPerPublish" : 1000,
+                     "MaxNumberOfMonitoredItems" : 32767,
+                     "PublishingInterval" : 1000.0,
+                     "SubscriptionName" : "DEFAULTUNSO"
+                  },
+                  "DeviceEnabled" : true,
+                  "DeviceId" : "LUIS1",
+                  "MiscParameters" : 
+                  {
+                     "AllowArraySizeMismatch" : true,
+                     "AsyncWrite" : false,
+                     "CircularLog" : true,
+                     "DumpSubscriptionsAtStartup" : 3,
+                     "LogFileSize" : 104857600,
+                     "OPCUAClientUseIndexRange" : true,
+                     "TimeStampsToUse" : "source",
+                     "TraceAll" : false,
+                     "TraceConnection" : true,
+                     "TraceDataChanges" : true,
+                     "TraceDequeue" : true,
+                     "TraceEvents" : true,
+                     "TraceGroupActivity" : true,
+                     "TraceItemActivity" : true,
+                     "TraceLevel" : 3,
+                     "TracePolling" : true,
+                     "TraceWriting" : true,
+                     "callTimeout" : 5000,
+                     "connectionTimeout" : 5000,
+                     "delayAfterConnection" : 5,
+                     "discoveryTimeout" : 5000,
+                     "publishTimeout" : 70000,
+                     "reconnectionAttemptInterval" : 1000,
+                     "returnDiagnostics" : 0,
+                     "serverStatusReadInterval" : 5000,
+                     "serverStatusReadTimeout" : 5000,
+                     "sessionTimeout" : 1200000
+                  },
+                  "NamespaceArray" : 
+                  [
+                     {
+                        "NamespaceIndex" : 4,
+                        "NamespaceUri" : "CODESYSSPV3/3S/IecVarAccess"
+                     }
+                  ],
+                  "NumberOfDomains" : 0,
+                  "NumberOfSubscriptions" : 0,
+                  "ProductUri" : "http://ge-ip.com/CIMPLICITY",
+                  "RedundancySettings" : 
+                  {
+                     "PrimaryNetwork1" : "",
+                     "PrimaryNetwork2" : "",
+                     "RedundancySettings" : null,
+                     "RedundancySupport" : 0,
+                     "SecondaryNetwork1" : "",
+                     "SecondaryNetwork2" : ""
+                  },
+                  "Subscriptions" : 
+                  [
+                     {
+                        "AllowMixedSamplingIntervals" : false,
+                        "AllowZeroSamplingIntervals" : false,
+                        "DefaultDiscardOldest" : true,
+                        "DefaultQueueSize" : 10,
+                        "Info" : 
+                        {
+                           "DomainIndex" : 0,
+                           "FullName" : "DEFAULTPOLL",
+                           "Index" : 0,
+                           "MonitoredItems" : [],
+                           "NumberOfBadItems" : 0,
+                           "NumberOfGoodItems" : 0,
+                           "NumberOfItems" : 0
+                        },
+                        "IsUnsolicited" : false,
+                        "LifeTimeCount" : 180,
+                        "MaxAge" : 50,
+                        "MaxAgeType" : "Percent",
+                        "MaxDomainLength" : 32767,
+                        "MaxKeepAliveCount" : 60,
+                        "MaxNotificationsPerPublish" : 1000,
+                        "MaxNumberOfMonitoredItems" : 32767,
+                        "PublishingInterval" : 1000.0,
+                        "SubscriptionName" : "DEFAULTPOLL"
+                     },
+                     {
+                        "AllowMixedSamplingIntervals" : false,
+                        "AllowZeroSamplingIntervals" : false,
+                        "DefaultDiscardOldest" : true,
+                        "DefaultQueueSize" : 10,
+                        "Info" : 
+                        {
+                           "DomainIndex" : 0,
+                           "FullName" : "DEFAULTUNSO",
+                           "Index" : 0,
+                           "MonitoredItems" : [],
+                           "NumberOfBadItems" : 0,
+                           "NumberOfGoodItems" : 0,
+                           "NumberOfItems" : 0
+                        },
+                        "IsUnsolicited" : true,
+                        "LifeTimeCount" : 180,
+                        "MaxAge" : 50,
+                        "MaxAgeType" : "Percent",
+                        "MaxDomainLength" : 32767,
+                        "MaxKeepAliveCount" : 60,
+                        "MaxNotificationsPerPublish" : 1000,
+                        "MaxNumberOfMonitoredItems" : 32767,
+                        "PublishingInterval" : 1000.0,
+                        "SubscriptionName" : "DEFAULTUNSO"
+                     }
+                  ],
+                  "TotalNumberOfBadItems" : 0,
+                  "TotalNumberOfGoodItems" : 0,
+                  "TotalNumberOfItems" : 0,
+                  "UaSessionSettings" : 
+                  {
+                     "BrowsingSettings" : 
+                     {
+                        "MaxReferencesToReturn" : 100
+                     },
+                     "UaConnectionSettings" : 
+                     {
+                        "CommunicationSecurityMode" : 
+                        {
+                           "MessageSecurityMode" : "None",
+                           "SecurityPolicy" : "http://opcfoundation.org/UA/SecurityPolicy#None"
+                        },
+                        "DiscoveryType" : 0,
+                        "DiscoveryUrl" : "opc.tcp://192.168.0.100:4840",
+                        "InstanceCertificateConfig" : 
+                        {
+                           "#include" : "%CIMPATH%\\..\\data\\OpcUaCertificatesConfig.json:CertificatesConfiguration.InstanceCertificateConfig"
+                        },
+                        "PkiConfiguration" : 
+                        {
+                           "#include" : "%CIMPATH%\\..\\data\\OpcUaCertificatesConfig.json:CertificatesConfiguration.PkiConfiguration"
+                        },
+                        "RejectedCertificatesLocation" : 
+                        {
+                           "#include" : "%CIMPATH%\\..\\data\\OpcUaCertificatesConfig.json:CertificatesConfiguration.RejectedCertificatesLocation"
+                        },
+                        "ServerName" : "",
+                        "ServerUri" : "",
+                        "endpointUrl" : "opc.tcp://192.168.0.100:4840"
+                     },
+                     "UserIdentity" : 
+                     {
+                        "Certificate" : 
+                        {
+                           "#include" : "%CIMPATH%\\..\\data\\OpcUaCertificatesConfig.json:UserIdentityCertificate"
+                        },
+                        "Password" : "",
+                        "TokenType" : "Anonymous",
+                        "UserName" : ""
+                     }
+                  },
+                  "Version" : "1.0"
+               }
+            ],
+            "PkiConfiguration" : 
+            {
+               "#include" : "%CIMPATH%\\..\\data\\OpcUaCertificatesConfig.json:CertificatesConfiguration.PkiConfiguration"
+            },
+            "PortId" : "UA_0",
+            "ProductUri" : "http://ge-ip.com/CIMPLICITY",
+            "RejectedCertificatesLocation" : 
+            {
+               "#include" : "%CIMPATH%\\..\\data\\OpcUaCertificatesConfig.json:CertificatesConfiguration.RejectedCertificatesLocation"
+            },
+            "Version" : "1.0"
+         }
+      ],
+      "ProductUri" : "http://ge-ip.com/CIMPLICITY",
+      "Version" : "1.0"
+   }
+}

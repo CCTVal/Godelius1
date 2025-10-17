@@ -1,0 +1,22 @@
+$AM_STATUS      Alarm status alarm                      
+$CIMBASIC       CimBasic Alarms                         
+$DEVICE         Device Comm. Toolkit - device down alarm
+$DEVICE_S       Device Comm. Toolkit - device down alarm
+$DUAL_MASTER    Redundant Dual Master                   
+$DYN_CFG        Dynamic config change                   
+$EM_OVERFLOW    Event Manager Queue Overflows           
+$PTM_OVERFLOW   PTM App Queue Overflows                 
+$HIST_SERVER    Lost connection to server               
+$HIST_COLLECTOR Collector not collecting                
+$MAC_EVENT      Alarm w/ single field                   
+$OOR_AL         Alarm for out of range points           
+$PTM_AM         Point Mgmt info msg: Point_id %s        
+$RTR_LINK_DOWN  Router down alarm                       
+AMSI_ALARM      Device-Generated Alarm Message          
+MCP_PROC_DOWN   Process Manager Alarm                   
+NO_FIELDS       Contains only the alarm message         
+DB_LOGGING      Database logging alarm                  
+$LOGIN_FAILURE  Login Failures                          
+$PRINTER_DOWN   Printer - Generated Alarm Message       
+$OPC            OPC Alarms                              
+$DOCUMENT_DELIVEDocument Delivery failed                

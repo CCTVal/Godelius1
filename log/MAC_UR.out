@@ -1,0 +1,8 @@
+PID: 20168, 0x4ec8
+Service ID: UR_RP
+Process ID: UR_RP
+          Date/Time(UTC);  Status;                        Procedure;               Source;       Code;  Reference;  Thread ID; Message 
+2025-10-17T18:22:47.6187; success;                         urdriver;              Unknown;          0;          0;       5664; User registration finished reading configuration; Time taken ( 0.047 seconds); 
+2025-10-17T18:22:47.6206; success;                         urdriver;              Unknown;          0;          0;       5664; User registration initialization complete, ready to process requests; Time taken ( 0.048 seconds); 
+
+ PA_DEBUG:Is Proficy Authentication Enabled: 0

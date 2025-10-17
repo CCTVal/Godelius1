@@ -1,0 +1,306 @@
+{
+   "ApplicationName" : "Proficy HMI SCADA - CIMPLICITY",
+   "ApplicationUri" : "urn:[NodeName]:GE-IP:CIMPLICITY",
+   "DefaultSubscription" : 
+   {
+      "AllowMixedSamplingIntervals" : false,
+      "AllowZeroSamplingIntervals" : false,
+      "DefaultDiscardOldest" : true,
+      "DefaultQueueSize" : 10,
+      "Info" : 
+      {
+         "DomainIndex" : 0,
+         "FullName" : "DEFAULTUNSO",
+         "Index" : 0,
+         "MonitoredItems" : [],
+         "NumberOfBadItems" : 0,
+         "NumberOfGoodItems" : 0,
+         "NumberOfItems" : 0
+      },
+      "IsUnsolicited" : true,
+      "LifeTimeCount" : 180,
+      "MaxAge" : 50,
+      "MaxAgeType" : "Percent",
+      "MaxDomainLength" : 32767,
+      "MaxKeepAliveCount" : 60,
+      "MaxNotificationsPerPublish" : 1000,
+      "MaxNumberOfMonitoredItems" : 32767,
+      "PublishingInterval" : 1000.0,
+      "SubscriptionName" : "DEFAULTUNSO"
+   },
+   "DeviceEnabled" : true,
+   "DeviceId" : "LUIS1",
+   "GdsSessionSettings" : 
+   {
+      "BrowsingSettings" : 
+      {
+         "MaxReferencesToReturn" : 100
+      },
+      "UaConnectionSettings" : 
+      {
+         "CommunicationSecurityMode" : 
+         {
+            "MessageSecurityMode" : "None",
+            "SecurityPolicy" : "http://opcfoundation.org/UA/SecurityPolicy#None"
+         },
+         "DiscoveryType" : 1,
+         "DiscoveryUrl" : "opc.tcp://localhost:4840",
+         "InstanceCertificateConfig" : 
+         {
+            "GenerateSelfSigned" : true,
+            "OpenSslCertificateFileName" : "pki/own/certs/CimOpcUaServer.der",
+            "OpenSslCertificatePrivateKeyFileName" : "pki/own/private/CimOpcUaServer.pem",
+            "SelfSignedCertificateFields" : 
+            {
+               "Country" : "CA",
+               "Locality" : "Edmonton",
+               "NodeName" : "[NodeName]",
+               "Organization" : "GE",
+               "OrganizationUnit" : "IP",
+               "State" : "Alberta",
+               "SubjectName" : "CIMPLICITY-[ProjectName]@[NodeName]",
+               "Uri" : "urn:[NodeName]:GE-IP:CIMPLICITY",
+               "ValidityDurationInSeconds" : 157680000
+            },
+            "StoreType" : "Directory",
+            "WindowsCertificateName" : "",
+            "WindowsCertificateStoreName" : "UA Applications",
+            "WindowsCertificateThumbprint" : "",
+            "WindowsStoreLocationType" : "LocalMachine"
+         },
+         "PkiConfiguration" : 
+         {
+            "OpenSslIssuersCertificatesLocation" : "%ProgramData%/Proficy/Proficy CIMPLICITY/certificates/issuers/certs/",
+            "OpenSslIssuersRevocationListLocation" : "%ProgramData%/Proficy/Proficy CIMPLICITY/certificates/issuers/crl/",
+            "OpenSslRevokedCertificateslocation" : "%ProgramData%/Proficy/Proficy CIMPLICITY/certificates/trusted/crl/",
+            "OpenSslTrustedCertificatesLocation" : "%ProgramData%/Proficy/Proficy CIMPLICITY/certificates/trusted/certs/",
+            "StoreType" : "Directory",
+            "WindowsCertificateStoreName" : "UA Applications",
+            "WindowsIssuersCertificateStoreName" : "Root",
+            "WindowsStoreLocationType" : "LocalMachine"
+         },
+         "RejectedCertificatesLocation" : "%ProgramData%/Proficy/Proficy CIMPLICITY/certificates/rejected/",
+         "ServerName" : "",
+         "ServerUri" : "",
+         "endpointUrl" : "opc.tcp://localhost:4841"
+      },
+      "UserIdentity" : 
+      {
+         "Certificate" : 
+         {
+            "GenerateSelfSigned" : true,
+            "OpenSslCertificateFileName" : "pki/own/certs/CimOpcUaClientUser.der",
+            "OpenSslCertificatePrivateKeyFileName" : "pki/own/private/CimOpcUaClientUser.pem",
+            "SelfSignedCertificateFields" : 
+            {
+               "Country" : "CA",
+               "Locality" : "Edmonton",
+               "NodeName" : "[NodeName]",
+               "Organization" : "GE",
+               "OrganizationUnit" : "IP",
+               "State" : "Alberta",
+               "SubjectName" : "Proficy HMI SCADA - CIMPLICITY User",
+               "Uri" : "urn:[NodeName]:GE-IP:CIMPLICITY",
+               "ValidityDurationInSeconds" : 157680000
+            },
+            "StoreType" : "Directory",
+            "WindowsCertificateName" : "",
+            "WindowsCertificateStoreName" : "UA Applications",
+            "WindowsCertificateThumbprint" : "",
+            "WindowsStoreLocationType" : "LocalMachine"
+         },
+         "Password" : "",
+         "TokenType" : "Anonymous",
+         "UserName" : ""
+      }
+   },
+   "MiscParameters" : 
+   {
+      "AllowArraySizeMismatch" : true,
+      "AsyncWrite" : false,
+      "CircularLog" : true,
+      "DumpSubscriptionsAtStartup" : 3,
+      "LogFileSize" : 104857600,
+      "OPCUAClientUseIndexRange" : true,
+      "TimeStampsToUse" : "source",
+      "TraceAll" : false,
+      "TraceConnection" : true,
+      "TraceDataChanges" : true,
+      "TraceDequeue" : true,
+      "TraceEvents" : true,
+      "TraceGroupActivity" : true,
+      "TraceItemActivity" : true,
+      "TraceLevel" : 3,
+      "TracePolling" : true,
+      "TraceWriting" : true,
+      "callTimeout" : 5000,
+      "connectionTimeout" : 5000,
+      "delayAfterConnection" : 5,
+      "discoveryTimeout" : 5000,
+      "publishTimeout" : 70000,
+      "reconnectionAttemptInterval" : 1000,
+      "returnDiagnostics" : 0,
+      "serverStatusReadInterval" : 5000,
+      "serverStatusReadTimeout" : 5000,
+      "sessionTimeout" : 1200000
+   },
+   "NamespaceArray" : 
+   [
+      {
+         "NamespaceIndex" : 4,
+         "NamespaceUri" : "CODESYSSPV3/3S/IecVarAccess"
+      }
+   ],
+   "NumberOfDomains" : 1,
+   "NumberOfSubscriptions" : 1,
+   "PasswordCertificateConfig" : 
+   {
+      "GenerateSelfSigned" : true,
+      "OpenSslCertificateFileName" : "%SITE_ROOT%/pki/own/certs/Proficy HMI SCADA - CIMPLICITY (Password).der",
+      "OpenSslCertificatePrivateKeyFileName" : "%SITE_ROOT%/pki/own/private/Proficy HMI SCADA - CIMPLICITY (Password).pem",
+      "SelfSignedCertificateFields" : 
+      {
+         "Country" : "",
+         "Locality" : "",
+         "NodeName" : "[NodeName]",
+         "Organization" : "GE",
+         "OrganizationUnit" : "IP",
+         "State" : "",
+         "SubjectName" : "Proficy HMI SCADA - CIMPLICITY (Password)",
+         "Uri" : "urn:[NodeName]:GE-IP:CIMPLICITY",
+         "ValidityDurationInSeconds" : 157680000
+      },
+      "StoreType" : "Windows",
+      "WindowsCertificateName" : "",
+      "WindowsCertificateStoreName" : "UA Applications",
+      "WindowsCertificateThumbprint" : "",
+      "WindowsStoreLocationType" : "LocalMachine"
+   },
+   "ProductUri" : "http://ge-ip.com/CIMPLICITY",
+   "RedundancySettings" : 
+   {
+      "PrimaryNetwork1" : "",
+      "PrimaryNetwork2" : "",
+      "RedundancySettings" : null,
+      "RedundancySupport" : 0,
+      "SecondaryNetwork1" : "",
+      "SecondaryNetwork2" : ""
+   },
+   "Subscriptions" : 
+   [
+      {
+         "AllowMixedSamplingIntervals" : false,
+         "AllowZeroSamplingIntervals" : false,
+         "DefaultDiscardOldest" : true,
+         "DefaultQueueSize" : 10,
+         "Info" : 
+         {
+            "DomainIndex" : 0,
+            "FullName" : "DEFAULTUNSO",
+            "Index" : 0,
+            "MonitoredItems" : [],
+            "NumberOfBadItems" : 0,
+            "NumberOfGoodItems" : 16,
+            "NumberOfItems" : 16
+         },
+         "IsUnsolicited" : true,
+         "LifeTimeCount" : 180,
+         "MaxAge" : 50,
+         "MaxAgeType" : "Percent",
+         "MaxDomainLength" : 32767,
+         "MaxKeepAliveCount" : 60,
+         "MaxNotificationsPerPublish" : 1000,
+         "MaxNumberOfMonitoredItems" : 32767,
+         "PublishingInterval" : 1000.0,
+         "SubscriptionName" : "DEFAULTUNSO"
+      }
+   ],
+   "TotalNumberOfBadItems" : 0,
+   "TotalNumberOfGoodItems" : 16,
+   "TotalNumberOfItems" : 16,
+   "UaSessionSettings" : 
+   {
+      "BrowsingSettings" : 
+      {
+         "MaxReferencesToReturn" : 100
+      },
+      "UaConnectionSettings" : 
+      {
+         "CommunicationSecurityMode" : 
+         {
+            "MessageSecurityMode" : "None",
+            "SecurityPolicy" : "http://opcfoundation.org/UA/SecurityPolicy#None"
+         },
+         "DiscoveryType" : 0,
+         "DiscoveryUrl" : "opc.tcp://192.168.0.100:4840",
+         "InstanceCertificateConfig" : 
+         {
+            "GenerateSelfSigned" : true,
+            "OpenSslCertificateFileName" : "C:\\Users\\vsaon\\OneDrive\\Documents\\Godelius\\cimplicity tests\\LuisTest\\\\pki\\own\\certs\\CimOpcUaServer.CELEUM.der",
+            "OpenSslCertificatePrivateKeyFileName" : "C:\\Users\\vsaon\\OneDrive\\Documents\\Godelius\\cimplicity tests\\LuisTest\\\\pki\\own\\private\\CimOpcUaServer.CELEUM.pem",
+            "SelfSignedCertificateFields" : 
+            {
+               "Country" : "CA",
+               "Locality" : "LocationName",
+               "NodeName" : "[NodeName]",
+               "Organization" : "Organization",
+               "OrganizationUnit" : "Unit",
+               "State" : "",
+               "SubjectName" : "CIMPLICITY-@CELEUM",
+               "Uri" : "urn:[NodeName]:GE-IP:CIMPLICITY",
+               "ValidityDurationInSeconds" : 157680000
+            },
+            "StoreType" : "Directory",
+            "WindowsCertificateName" : "",
+            "WindowsCertificateStoreName" : "",
+            "WindowsCertificateThumbprint" : "",
+            "WindowsStoreLocationType" : "LocalMachine"
+         },
+         "PkiConfiguration" : 
+         {
+            "OpenSslIssuersCertificatesLocation" : "C:\\Users\\vsaon\\OneDrive\\Documents\\Godelius\\cimplicity tests\\LuisTest\\\\pki\\issuers\\certs\\",
+            "OpenSslIssuersRevocationListLocation" : "C:\\Users\\vsaon\\OneDrive\\Documents\\Godelius\\cimplicity tests\\LuisTest\\\\pki\\issuers\\crl\\",
+            "OpenSslRevokedCertificateslocation" : "C:\\Users\\vsaon\\OneDrive\\Documents\\Godelius\\cimplicity tests\\LuisTest\\\\pki\\trusted\\crl\\",
+            "OpenSslTrustedCertificatesLocation" : "C:\\Users\\vsaon\\OneDrive\\Documents\\Godelius\\cimplicity tests\\LuisTest\\\\pki\\trusted\\certs\\",
+            "StoreType" : "Directory",
+            "WindowsCertificateStoreName" : "UA Applications",
+            "WindowsIssuersCertificateStoreName" : "UA Applications",
+            "WindowsStoreLocationType" : "LocalMachine"
+         },
+         "RejectedCertificatesLocation" : "C:\\Users\\vsaon\\OneDrive\\Documents\\Godelius\\cimplicity tests\\LuisTest\\\\pki\\rejected",
+         "ServerName" : "",
+         "ServerUri" : "",
+         "endpointUrl" : "opc.tcp://192.168.0.100:4840"
+      },
+      "UserIdentity" : 
+      {
+         "Certificate" : 
+         {
+            "GenerateSelfSigned" : true,
+            "OpenSslCertificateFileName" : "%SITE_ROOT%/pki/own/certs/CimOpcUaClientUser.der",
+            "OpenSslCertificatePrivateKeyFileName" : "%SITE_ROOT%/pki/own/private/CimOpcUaClientUser.pem",
+            "SelfSignedCertificateFields" : 
+            {
+               "Country" : "",
+               "Locality" : "",
+               "NodeName" : "[NodeName]",
+               "Organization" : "GE",
+               "OrganizationUnit" : "IP",
+               "State" : "",
+               "SubjectName" : "Proficy HMI SCADA - CIMPLICITY User",
+               "Uri" : "urn:[NodeName]:GE-IP:CIMPLICITY",
+               "ValidityDurationInSeconds" : 157680000
+            },
+            "StoreType" : "Directory",
+            "WindowsCertificateName" : "",
+            "WindowsCertificateStoreName" : "",
+            "WindowsCertificateThumbprint" : "",
+            "WindowsStoreLocationType" : "LocalMachine"
+         },
+         "Password" : "",
+         "TokenType" : "Anonymous",
+         "UserName" : ""
+      }
+   },
+   "Version" : "1.0"
+}

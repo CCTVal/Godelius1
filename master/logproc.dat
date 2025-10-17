@@ -1,0 +1,8 @@
+UR_RP                           RESIDENT        User Registration                       
+AMRP                            RESIDENT        Alarm Management                        
+MASTER_PTM0_RP                  RESIDENT        	Point Management                        
+DYNCFG                          RESIDENT        Dynamic Director                        
+PTX_RP                          RESIDENT        Point Translation                       
+MASTER_PTDP_RP                  RESIDENT        Derived Point Process                   
+EM_RP                           RESIDENT        Event Manager RP                        
+MASTER_UA_0                     RESIDENT                                                

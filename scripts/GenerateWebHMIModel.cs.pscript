@@ -1,0 +1,450 @@
+using Proficy.CIMPLICITY;
+using Proficy.CIMPLICITY.CimServer;
+using System;
+using System.Collections.Generic;
+using System.Collections;
+using System.IO;
+using System.Linq;
+using System.Text;
+using System.Xml;
+using System.Xml.Linq;
+using GE.WebHMI.CSVModelLibrary;
+
+/*
+
+# GenerateWebHMIModel.cs.pscript
+
+## Summary
+
+This script will generate a Web HMI object/asset model from your project classes
+and objects. Project classes become object types in Web HMI and project objects
+become objects in Web HMI. Data items in the classes become variables in the Web
+HMI object types. The script generates data source references for real time (OPC
+UA) and historical (Historian) data.
+The script creates a "root" object type and object for the project itself.  Points that
+are not object data items become variables on the project object, and all other objects
+become children of the project object.
+
+## Running the script
+
+* Copy this script to the bsm_data directory of your project if it does not already exist. (Add the ".pscript"
+  extension if it is missing: GenerateWebHMIModel.cs.pscript.)
+* Open the project in the Workbench.
+* Select the Script Engine > Scripts node in the Workbench.
+* Double-click the script to open it in the Script Editor.
+* Select the Run > Start menu item.
+* The default output file will be Model.csv in the main project directory.
+
+## Customization notes
+
+* The main entry point is GenerateWebHMIModel.Main().
+* An example of doing customization to the model before writing the CSV file is
+  shown in the CustomModelUpdate.
+* The Helper.ClassNameToAssetTypeName method can be set to convert
+  a CIMPLICITY class name to a Web HMI asset type name. The default method just returns
+  the class name. For example:
+  ```
+      Helper.ClassNameToAssetTypeName = (name) => name.ToUpper() + "AssetType";
+  ```
+*/
+
+
+/// <summary>
+/// Main entry point for the model export script.
+/// </summary>
+public class GenerateWebHMIModel
+{
+   public static cimProject OpenProject(string projPath)
+   {
+      cimProject proj = new cimProject();
+      proj.OpenLocalProject(projPath);
+      return proj;
+   }
+
+   public void Main()
+   {
+      string projectFolder = Environment.GetEnvironmentVariable("SITE_ROOT");
+      Helper.LogDirectory = projectFolder;
+      Helper.Log("INFO: --------");
+      Helper.Log("INFO: Starting.");
+
+      string testProjectPath = Path.Combine(projectFolder, Environment.GetEnvironmentVariable("PROJECT"));
+      string modelFilePath = Path.Combine(projectFolder, "Model.csv");
+      string historianServerName = "localhost";
+      string historianAlias = "HistorianServer";
+
+      Helper.Log("modelFilePath: " + modelFilePath);
+      cimProject project = OpenProject(testProjectPath);
+
+      // Build the model from the project
+      WebHMICSVModel model = CreateWebHMIModel(project, historianServerName, historianAlias);
+
+      // Make whatever changes you need to the model
+      //CustomModelUpdate(project, historianAlias, model);
+
+      // Write out the model CSV file (UTF-8 encoding without a Byte-Order Mark (BOM))
+      using (var sw = new StreamWriter(modelFilePath, false, new UTF8Encoding(false)))
+      {
+         WebHMICSVModelSerializer.SerializeAsCSV(sw, model, project.ProjectName + " " + project.VersionNumber + " Model");
+      }
+
+      Helper.Log("INFO: Complete.");
+   }
+
+   /// <summary>
+   /// This is an example of how to customize the model before it is written to the CSV file.
+   /// In this example, we add a new property group and add some project-level points (not
+   /// associated with any class or object) to the model.
+   /// </summary>
+   /// <param name="project"></param>
+   /// <param name="historianAlias"></param>
+   /// <param name="model"></param>
+   public static void CustomModelUpdate(cimProject project, string historianAlias, WebHMICSVModel model)
+   {
+      // Add in some alarm points that we know the project uses.
+
+      // Find the root asset type...
+      string projAssetTypeName = project.ProjectName + "AssetType";
+      AssetType rootType = model.AssetTypes.Find(at => at.Name == projAssetTypeName);
+      if (rootType == null)
+      {
+         throw new Exception("Could not find project asset type: " + projAssetTypeName);
+      }
+
+      // ... and add the extra property group to it
+      string alarmSummaryPropertyGroupName = "AlarmSummaryPropertyGroup";
+      rootType.AddPropertyGroup(alarmSummaryPropertyGroupName);
+      PropertyGroup alarmSummaryGroup = new PropertyGroup(alarmSummaryPropertyGroupName, "A PropertyGroup for the project's alarm summary points.");
+      // (note: here we insert it in the front, but you could just as easily Add() it to the end)
+      model.PropertyGroups.Insert(0, alarmSummaryGroup);
+
+      // Find the root asset
+      Asset rootAsset = model.Assets.Find(asset => asset.Name == project.ProjectName);
+      if (rootAsset == null)
+      {
+         throw new Exception("Could not find project asset: " + project.ProjectName);
+      }
+
+      // For each of the points, add the property definition and data source to the model
+      foreach (string name in new[] { "ALARMS_ACKED", "ALARMS_UNACKED", "ALARMS_ACTIVE", "ALARMS_TOTAL" })
+      {
+         PropertyDefinition property = null;
+         property = model.PropertyDefinitions.Find(x => x.Name == name);
+         //Since the points are already added, a null means this project doesn't have these points. So use the $ALARM. system points
+         //The property definitions for these system points are named S__ALARM_ACKED, S__ALARM_UNACKED, S__ALARM_ACTIVE, and S__ALARM_TOTAL
+         if (null == property)
+         {
+            string sys_name = "S__" + name.Replace("S_", "_");
+            property = model.PropertyDefinitions.Find(x => x.Name == sys_name);
+            if (null == property)  //Log a message if we didn't find the system point and continue
+            {
+               Helper.Log("CustomModelUpdate(): could not find " + name + " or " + sys_name + " Property Definition.");
+               continue;
+            }
+         }
+         property.PropertyGroupName = alarmSummaryPropertyGroupName;
+      }
+   }
+   /// <summary>
+   /// Creates the Web HMI model structure for serialization.
+   /// The model can be adjusted after it is created but before it is serialized.
+   /// </summary>
+   /// <param name="project"></param>
+   /// <param name="historianServerName"></param>
+   /// <param name="historianAlias">pass 'null' if no historical data sources should be created</param>
+   /// <returns></returns>
+   public static WebHMICSVModel CreateWebHMIModel(cimProject project, string historianServerName, string historianAlias)
+   {
+      WebHMICSVModel model = new WebHMICSVModel();
+
+      // Historical server details
+      if (historianAlias != null)
+      {
+         ServerDetailInfo serverDetails = new ServerDetailInfo(historianAlias, historianServerName, "Historian");
+         model.ServerDetailInfo.Add(serverDetails);
+      }
+
+      // OPC UA server details (model.ServerDetailInfo) and namespace items (model.NamespaceItems)
+      string opcua_URI;
+      string opcua_URL;
+      object opc_namespace;
+      if (project.GetOPCUA_ServerConfig(out opcua_URI, out opcua_URL, out opc_namespace))
+      {
+         ServerDetailInfo serverDetailsRealtime = new ServerDetailInfo(project.ProjectName, opcua_URI, "OPCUA");
+         model.ServerDetailInfo.Add(serverDetailsRealtime);
+
+         IEnumerable<object> collection = (IEnumerable<object>)opc_namespace;
+         foreach (object element in collection)
+         {
+            string namespaceText = element.ToString();
+            int indexOffSet = namespaceText.IndexOf(':');
+            int namespaceIndex = Int32.Parse(namespaceText.Substring(0, indexOffSet));
+            string uri = namespaceText.Substring(indexOffSet + 1, namespaceText.Length - (indexOffSet + 1));
+            NamspaceItemInfo namspaceItemInfo = new NamspaceItemInfo(project.ProjectName, namespaceIndex, uri);
+            model.NamspaceItems.Add(namspaceItemInfo);
+         }
+      }
+
+      // Make a root AssetType, just to have a little structure
+      string projAssetTypeName = Helper.ClassNameToAssetTypeName(project.ProjectName);
+      string projPropGroupName = project.ProjectName + "ObjectsPropertyGroup";
+      string projPointsPropGroupName = project.ProjectName + "PointsPropertyGroup";
+      AssetType rootType = new AssetType(projAssetTypeName, "Root AssetType for project " + project.ProjectName, new List<string> { projPropGroupName, projPointsPropGroupName });
+
+      model.AssetTypes.Add(rootType);
+
+      // Make the root Asset instance (if the parent is named \, then it's considered the root asset by Web HMI)
+      Asset rootAsset = new Asset(project.ProjectName, projAssetTypeName, "\\", "");
+      model.Assets.Add(rootAsset);
+
+      // Make PropertyGroups for this project
+      PropertyGroup rootGroup = new PropertyGroup(projPropGroupName, "A PropertyGroup for the project's objects");
+      model.PropertyGroups.Add(rootGroup);
+      PropertyGroup rootPointsGroup = new PropertyGroup(projPointsPropGroupName, "A PropertyGroup for the project's points");
+      model.PropertyGroups.Add(rootPointsGroup);
+
+      // CimObjectInstance.ClassID comes back in uppercase for some reason.
+      // This will let us do a case-insensitive look up for the real class.
+      var classNames = new Dictionary<string, string>(StringComparer.OrdinalIgnoreCase);
+      foreach (CimClassInstance cimclass in project.Classes)
+      {
+         classNames.Add(cimclass.ID, cimclass.ID);
+      }
+      Func<string, string> lookupClassName = (name) => classNames[name];
+
+      // Build up AssetTypes and PropertyGroups. For now we assume 1 PropertyGroup per AssetType sharing the same name
+      foreach (CimClassInstance cimclass in project.Classes)
+      {
+         //Helper.Log("DEBUG: project.Classes: " + cimclass.ID);
+         string clsName = lookupClassName(cimclass.ID);
+         string clsDesc = cimclass.Description;
+         clsName = StringHelper.MakeSafeWebHMIName(clsName);
+         string clsAssetTypeName = Helper.ClassNameToAssetTypeName(clsName);
+         string clsItemsPropGrpName = clsName + "DataItems";
+         // Add class as an AssetType
+         AssetType assetType = new AssetType(clsAssetTypeName, clsDesc, clsItemsPropGrpName);
+         model.AssetTypes.Add(assetType);
+         // Add PropertyGroup for class DataItems
+         PropertyGroup propGroup = new PropertyGroup(clsItemsPropGrpName, clsDesc);
+         model.PropertyGroups.Add(propGroup);
+         // Add DataItems as PropertyDefinitions
+         foreach (CimPoint dataItem in cimclass.DataItems)
+         {
+            PropertyDefinition propDef = new PropertyDefinition(clsItemsPropGrpName, StringHelper.MakeSafeWebHMIVarName(dataItem.PointID), CimpDataTypeToMimicDataType(dataItem.PointID, dataItem.DataType));
+            model.PropertyDefinitions.Add(propDef);
+         }
+
+         // Add a PropertyDefinition for each Composite member as type Asset
+         foreach (CimClassCompositeMember child in cimclass.CompositeMembers)
+         {
+            //Helper.Log("DEBUG: cimclass.CompositeMembers: " + child.ClassID);
+            string clsNameChild = lookupClassName(child.ClassID);
+            clsNameChild = StringHelper.MakeSafeWebHMIName(clsNameChild);
+            string clsChildAssetTypeName = Helper.ClassNameToAssetTypeName(clsNameChild);
+            PropertyDefinition childDef = new PropertyDefinition(clsItemsPropGrpName, StringHelper.MakeSafeWebHMIVarName(child.ID), "Asset", clsChildAssetTypeName);
+            model.PropertyDefinitions.Add(childDef);
+         }
+      }
+
+      //Store a list of points associated with objects so that we don't duplicate dataSources when we iterate the point list.
+      ArrayList objectPoints = new ArrayList();
+      foreach (CimObjectInstance cimobj in project.Objects)
+      {
+         string clsName = lookupClassName(cimobj.ClassID);
+         string objName = cimobj.ID;
+         string objPropName = objName + "Property";
+         string clsAssetTypeName = Helper.ClassNameToAssetTypeName(clsName);
+         //Helper.Log("DEBUG: cimclass.CompositeMembers: " + cimobj.ClassID);
+         string clsItemsPropGrpName = clsName + "DataItems";
+
+         // Create the asset
+         string parentAssetName = rootAsset.Name;
+         string[] parentChildNames = cimobj.ID.Split('.');
+         if (parentChildNames.Length > 1)
+         {
+            parentAssetName = string.Join(".", parentChildNames.Take(parentChildNames.Length - 1));
+            objPropName = parentChildNames[parentChildNames.Length - 1];
+         }
+         else
+         {
+            // Make a PropertyDefinition for this Object and add it to the Project's ObjectsPropertyGroup
+            PropertyDefinition objPropDef = new PropertyDefinition(rootGroup.Name, StringHelper.MakeSafeWebHMIVarName(objPropName), "Asset", clsAssetTypeName);
+            model.PropertyDefinitions.Add(objPropDef);
+         }
+         Asset objAsset = new Asset(StringHelper.MakeSafeWebHMIName(objName), clsAssetTypeName, parentAssetName, objPropName);
+         model.Assets.Add(objAsset);
+
+         // Tie the Asset to TagSources
+         foreach (CimDataItem dataItem in cimobj.DataItems)
+         {
+            // Only create a historical source if we have a historian alias and if the point is configured to be logged.
+            string histAlias = null;
+            string histTagID = null;
+            CimPoint point = project.Points[dataItem.PointID];
+            //Save this pointId for later so we won't duplicate the dataSource when we iterate all points
+            objectPoints.Add(point.PointID);
+            if (point == null)
+            {
+               Helper.Log(string.Format("WARNING: data item '{0}' has point ID '{1}' which was not found in the project", dataItem.ID, dataItem.PointID));
+            }
+            if (historianAlias != null && point != null && point.LogDataHistorian)
+            {
+               histAlias = historianAlias;
+               histTagID = project.ProjectName + "." + dataItem.PointID;
+            }
+
+            DataSource itemSource = new DataSource(objAsset.Name, StringHelper.MakeSafeWebHMIVarName(dataItem.ID), project.ProjectName, StringHelper.MakeEscapedCSVString(dataItem.OPCUA_NodeID), histAlias, StringHelper.MakeEscapedCSVString(histTagID));
+            model.TagSources.Add(itemSource);
+         }
+      }
+
+      objectPoints.Sort();
+
+      foreach (CimPoint point in project.Points)
+      {
+         if (objectPoints.Contains(point.PointID))
+         {
+            //We already have this point, so lets remove it and continue on
+            objectPoints.Remove(point.PointID);
+            continue;
+         }
+
+         //Don't add LOCAL points.
+         if (point.PointID.StartsWith("$LOCAL") || point.PointID.StartsWith("$ROLE") || point.PointID.StartsWith("$USER"))
+            continue;
+
+         string histAlias = null;
+         string histTagID = null;
+         if (historianAlias != null && point != null && point.LogDataHistorian)
+         {
+            histAlias = historianAlias;
+            histTagID = project.ProjectName + "." + point.PointID;
+         }
+
+         string resPropGroupName = point.ResourceID;
+         resPropGroupName = StringHelper.MakeSafeWebHMIName(resPropGroupName);
+         //Look to see if we have a PropertyGroup for the Point's Factory Resource
+         if (null == model.PropertyGroups.Find(x => x.Name == resPropGroupName))
+         {
+            //Create a property group for the factory resource
+            PropertyGroup resGroup = new PropertyGroup(resPropGroupName, "Property group for " + resPropGroupName + " factory resource.");
+            model.PropertyGroups.Add(resGroup);
+            rootType.PropertyGroups.Add(resPropGroupName);
+         }
+         //Make a PropertyDefinition
+         string propName = StringHelper.MakeSafeWebHMIVarName(point.PointID);
+         PropertyDefinition propDef = new PropertyDefinition(resPropGroupName, propName, CimpDataTypeToMimicDataType(point.PointID, point.DataType));
+         model.PropertyDefinitions.Add(propDef);
+         DataSource itemSource = new DataSource(rootAsset.Name, propName, project.ProjectName, StringHelper.MakeEscapedCSVString(point.OPCUA_NodeID), histAlias, StringHelper.MakeEscapedCSVString(histTagID));
+         model.TagSources.Add(itemSource);
+      }
+
+      return model;
+   }
+
+   private static string CimpDataTypeToMimicDataType(string pointID, CimPointTypesEnum cimpType)
+   {
+      switch (cimpType)
+      {
+         case CimPointTypesEnum.cimReal:
+         case CimPointTypesEnum.cimShort:
+         case CimPointTypesEnum.cimInteger:
+         case CimPointTypesEnum.cimLong:
+         case CimPointTypesEnum.cimInt64:
+         case CimPointTypesEnum.cimUnsignedShort:
+         case CimPointTypesEnum.cimUnsignedInteger:
+         case CimPointTypesEnum.cimUnsignedLong:
+         case CimPointTypesEnum.cimUnsignedInt64:
+         case CimPointTypesEnum.cimBitString:
+            return "NUMBER";
+         case CimPointTypesEnum.cimBoolean:
+            return "BOOLEAN";
+         case CimPointTypesEnum.cimString:
+         case CimPointTypesEnum.cimWString:
+         case CimPointTypesEnum.cimOctectString:
+            return "STRING";
+         default:
+            Helper.Log(string.Format("WARNING: Unknown CimPointTypesEnum ({0}) for data item '{1}'.", cimpType, pointID));
+            return "STRING";
+      }
+   }
+}
+
+/// <summary>
+/// Static helper methods, like Log().
+/// </summary>
+public static class Helper
+{
+   /// <summary>
+   /// Set the directory for writing the log file.
+   /// </summary>
+   /// <returns></returns>
+   public static string LogDirectory
+   {
+      get
+      {
+         if (null == _logFilePath)
+            return Directory.GetCurrentDirectory();
+         return Path.GetDirectoryName(_logFilePath);
+      }
+      set
+      {
+         if (!Directory.Exists(value))
+            throw new DirectoryNotFoundException("Directory not found: " + value);
+         _logFilePath = value;
+      }
+   }
+
+   public static string LogFile
+   {
+      get
+      {
+         return Path.Combine(LogDirectory, "GenerateWebHMIModel.log");
+      }
+   }
+   private static string _logFilePath;
+
+   /// <summary>
+   /// Write a message to the log file.
+   /// </summary>
+   /// <param name="msg"></param>
+   public static void Log(string msg)
+   {
+      System.IO.File.AppendAllText(LogFile, DateTime.Now.ToString("s") + " : " + msg + "\r\n");
+   }
+
+   /// <summary>
+   /// Canonicalize the class ID since CimClassInstance.ID and CimObjectInstance.ClassID
+   /// don't return the same value.
+   /// </summary>
+   /// <param name="classID"></param>
+   /// <returns>the canoncial class ID</returns>
+   public static string FixupClassID(string classID)
+   {
+      classID = classID.ToUpper();
+      if (classID.Length > 32)
+      {
+         classID = classID.Substring(0, 32);
+      }
+      return classID;
+   }
+
+   /// <summary>
+   /// You can set this if you want control over the Web HMI asset type names that
+   /// are generated for a CIMPLICITY class name.
+   /// By default, it just uses the class name as the asset type name.
+   /// </summary>
+   /// <returns></returns>
+   public static Func<string, string> ClassNameToAssetTypeName
+   {
+      get;
+      set;
+   }
+
+   /// <summary>Static constructor.</summary>
+   static Helper()
+   {
+      ClassNameToAssetTypeName = (name) => name;
+   }
+
+}
