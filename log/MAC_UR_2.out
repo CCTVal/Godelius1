@@ -1,8 +1,8 @@
-PID: 19724, 0x4d0c
+PID: 16388, 0x4004
 Service ID: UR_RP
 Process ID: UR_RP
           Date/Time(UTC);  Status;                        Procedure;               Source;       Code;  Reference;  Thread ID; Message 
-2025-10-17T18:12:19.7272; success;                         urdriver;              Unknown;          0;          0;      26564; User registration finished reading configuration; Time taken ( 0.048 seconds); 
-2025-10-17T18:12:19.7670; success;                         urdriver;              Unknown;          0;          0;      26564; User registration initialization complete, ready to process requests; Time taken ( 0.088 seconds); 
+2025-10-20T17:24:13.4276; success;                         urdriver;              Unknown;          0;          0;      13808; User registration finished reading configuration; Time taken ( 0.039 seconds); 
+2025-10-20T17:24:13.4299; success;                         urdriver;              Unknown;          0;          0;      13808; User registration initialization complete, ready to process requests; Time taken ( 0.041 seconds); 
 
  PA_DEBUG:Is Proficy Authentication Enabled: 0
