@@ -1,4 +1,4 @@
-PID: 14800, 0x39d0
+PID: 10384, 0x2890
 Service ID: MASTER_PTM0_RP
 Process ID: MASTER_PTM0_RP
 Hash size: PTMRP_AP_ID_HASH_SIZE == 400
@@ -26,8 +26,8 @@ Hash size: PTMRP_DELAYLOAD_POINT_HASH_SIZE == 509
 Hash size: PTMRP_MEAS_UNIT_HASH_SIZE == 223
 Hash size: PTMRP_AP_REQ_HASH_SIZE == 37831
           Date/Time(UTC);  Status;                        Procedure;               Source;       Code;  Reference;  Thread ID; Message 
-2025-10-20T18:29:34.7035; success; CimClassManager_InitializeClassC;              Unknown;          0;          0;       3932; Time taken for InitializeClassCaching (  0.002 seconds); 
-2025-10-20T18:29:34.7475; success;                       ptmrp_main;              Unknown;          0;          0;       3932; ptm_rp is ready to process requests; Time taken for initialization( 5.551 seconds); 
+2025-10-21T18:22:06.2281; success; CimClassManager_InitializeClassC;              Unknown;          0;          0;       9908; Time taken for InitializeClassCaching (  0.023 seconds); 
+2025-10-21T18:22:06.3006; success;                       ptmrp_main;              Unknown;          0;          0;       9908; ptm_rp is ready to process requests; Time taken for initialization( 6.118 seconds); 
 MASTER_UA_0 queuesize set to 8 messages
 Hash Table for PTMRP_AP_ID_HASH_SIZE has size:[409], item count:[1]
 Hash Table for PTMRP_DP_ID_HASH_SIZE has size:[13], item count:[0]
