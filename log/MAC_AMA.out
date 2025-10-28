@@ -1,0 +1,17 @@
+PID: 22252, 0x56ec
+Service ID: AMRP
+Process ID: AMRP
+Hash size: AMRP_ALARM_TYPE_HASH_SIZE == 31
+Hash size: AMRP_ALARM_CLASS_HASH_SIZE == 31
+Hash size: AMRP_ROLE_HASH_SIZE == 11
+Hash size: AMRP_FR_HASH_SIZE == 1009
+Hash size: AMRP_ALARM_DEF_HASH_SIZE == 1009
+Hash size: AMRP_USER_HASH_SIZE == 47
+Hash size: AMRP_ALRM_BLK_GROUP_HASH_SIZE == 17
+          Date/Time(UTC);  Status;                        Procedure;               Source;       Code;  Reference;  Thread ID; Message 
+2025-10-22T14:35:07.4926; success;                          am_init;              Unknown;          0;          0;      19624; am_rp finished reading configuration; Time taken( 1.098 seconds); 
+2025-10-22T14:35:07.4990; success;                          am_init;              Unknown;          0;          0;      19624; am_rp finished registering with UR; Time taken( 0.006 seconds); 
+2025-10-22T14:35:07.5010; success;                          am_init;              Unknown;          0;          0;      19624; am_rp finished connecting to alarm providers; Time taken( 0.001 seconds); 
+2025-10-22T14:35:07.5010; success;                        amrp_main;              Unknown;          0;          0;      19624; am_rp finished am_find_master ; Time taken( 0.001 seconds); 
+2025-10-22T14:35:07.5084; success;                        amrp_main;              Unknown;          0;          0;      19624; am_rp finished am_ptm_inform ; Time taken( 0.007 seconds); 
+2025-10-22T14:35:07.5094; success;                        amrp_main;              Unknown;          0;          0;      19624; am_rp is ready to process requests; Total time taken for initialization( 1.114 seconds); 

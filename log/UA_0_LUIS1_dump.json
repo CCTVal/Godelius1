@@ -232,7 +232,7 @@
             "SecurityPolicy" : "http://opcfoundation.org/UA/SecurityPolicy#None"
          },
          "DiscoveryType" : 0,
-         "DiscoveryUrl" : "opc.tcp://192.168.0.103:4840",
+         "DiscoveryUrl" : "opc.tcp://192.168.0.100:4840",
          "InstanceCertificateConfig" : 
          {
             "GenerateSelfSigned" : true,
@@ -270,7 +270,7 @@
          "RejectedCertificatesLocation" : "C:\\Users\\vsaon\\OneDrive\\Documents\\Godelius\\cimplicity tests\\LuisTest\\\\pki\\rejected",
          "ServerName" : "",
          "ServerUri" : "",
-         "endpointUrl" : "opc.tcp://192.168.0.103:4840"
+         "endpointUrl" : "opc.tcp://192.168.0.100:4840"
       },
       "UserIdentity" : 
       {
