@@ -1,26 +1,26 @@
-========== Tue Oct 28 15:07:58 2025:TRACE FILE HEAD ==========
-C:\Users\vsaon\OneDrive\Documents\Godelius\cimplicity tests\LuisTest\log\MASTER_UA_0.LOG
+========== Wed Oct 29 14:39:18 2025:TRACE FILE HEAD ==========
+C:\Users\vsaon\OneDrive\Documents\Godelius\aire_comprimido\HMI_aire_comprimido\log\MASTER_UA_0.LOG
 ---------------------------------------------------------------------
-2025-10-28T18:07:58.1097201Z|device_id[PORTLEVEL]|thread_id[TOOLKIT]|Port configuration settings successfully read from file|status_code[0x00000000(Good)]|message_id[03]
-2025-10-28T18:07:58.1097201Z|device_id[PORTLEVEL]|thread_id[TOOLKIT]|[PortLevel] parameter [CircularLog] Value [TRUE]|status_code[0x00000000(Good)]|message_id[03]
-2025-10-28T18:07:58.1097201Z|device_id[PORTLEVEL]|thread_id[TOOLKIT]|[PortLevel] parameter [LogFileSize] Value [104857600]|status_code[0x00000000(Good)]|message_id[03]
-2025-10-28T18:07:58.1097201Z|device_id[PORTLEVEL]|thread_id[TOOLKIT]|[PortLevel] parameter [TraceLevel] Value [3]|status_code[0x00000000(Good)]|message_id[03]
-2025-10-28T18:07:58.1097201Z|device_id[PORTLEVEL]|thread_id[TOOLKIT]|[PortLevel] parameter [DataChangeQueueLimit] Value [25000]|status_code[0x00000000(Good)]|message_id[03]
-2025-10-28T18:07:58.1097201Z|device_id[PORTLEVEL]|thread_id[TOOLKIT]|Toolkit is calling UserOpenPort...|status_code[0x00000000(Good)]|message_id[03]
-2025-10-28T18:07:58.1097201Z|device_id[PORTLEVEL]|thread_id[TOOLKIT]|Protocol Info for OPC UA Client have been initialized|status_code[0x00000000(Good)]|message_id[04]
-2025-10-28T18:07:58.1568195Z|device_id[PORTLEVEL]|thread_id[TOOLKIT]|OpcUaClient::UserValidatePointsBegin: Point Validation Beginning...|status_code[0x00000000(Good)]|message_id[034]
-2025-10-28T18:07:58.1631383Z|device_id[PORTLEVEL]|thread_id[TOOLKIT]|OpcUaClient::UserValidatePointsBegin: Point Validation Complete.|status_code[0x00000000(Good)]|message_id[034]
-2025-10-28T19:26:15.3419237Z|device_id[PORTLEVEL]|thread_id[TOOLKIT]|CIMPLICITY has initiated a shutdown of the OPC UA client.|status_code[0x00000000(Good)]|message_id[04]
-2025-10-28T19:26:15.3429078Z|device_id[PORTLEVEL]|thread_id[TOOLKIT]|Expect another PORTLEVEL message indicating shutdown completion...|status_code[0x00000000(Good)]|message_id[04]
-2025-10-28T19:26:15.3429078Z|device_id[PORTLEVEL]|thread_id[TOOLKIT]|Calling Disconnect for each device...|status_code[0x00000000(Good)]|message_id[06]
-2025-10-28T19:26:15.3439323Z|device_id[PORTLEVEL]|thread_id[TOOLKIT]|Waiting until all 1 devices are disconnected. for now 1 devices are pending|status_code[0x00000000(Good)]|message_id[06]
-2025-10-28T19:26:16.3303921Z|device_id[PORTLEVEL]|thread_id[TOOLKIT]|Disconnect complete. Clearing point read queue...|status_code[0x00000000(Good)]|message_id[07]
-2025-10-28T19:26:16.3303921Z|device_id[PORTLEVEL]|thread_id[TOOLKIT]|Point read queue has 0 records to clear ...|status_code[0x00000000(Good)]|message_id[07]
-2025-10-28T19:26:16.3303921Z|device_id[PORTLEVEL]|thread_id[TOOLKIT]|Clearing point read queue complete! Clearing point write queue...|status_code[0x00000000(Good)]|message_id[07]
-2025-10-28T19:26:16.3303921Z|device_id[PORTLEVEL]|thread_id[TOOLKIT]|Point write queue has 0 records to clear ...|status_code[0x00000000(Good)]|message_id[07]
-2025-10-28T19:26:16.3303921Z|device_id[PORTLEVEL]|thread_id[TOOLKIT]|Point write queue cleared.|status_code[0x00000000(Good)]|message_id[08]
-2025-10-28T19:26:16.3303921Z|device_id[PORTLEVEL]|thread_id[TOOLKIT]|OPC UA Client shutdown complete.|status_code[0x00000000(Good)]|message_id[012]
-2025-10-28T19:26:16.3303921Z|device_id[PORTLEVEL]|thread_id[TOOLKIT]|Termination of OPC UA Client succeeded|status_code[0x00000000(Good)]|message_id[0999]
-========== Tue Oct 28 16:26:16 2025:TRACE FILE TAIL ==========
-C:\Users\vsaon\OneDrive\Documents\Godelius\cimplicity tests\LuisTest\log\MASTER_UA_0.LOG
+2025-10-29T17:39:18.8939997Z|device_id[PORTLEVEL]|thread_id[TOOLKIT]|Port configuration settings successfully read from file|status_code[0x00000000(Good)]|message_id[03]
+2025-10-29T17:39:18.8939997Z|device_id[PORTLEVEL]|thread_id[TOOLKIT]|[PortLevel] parameter [CircularLog] Value [TRUE]|status_code[0x00000000(Good)]|message_id[03]
+2025-10-29T17:39:18.8939997Z|device_id[PORTLEVEL]|thread_id[TOOLKIT]|[PortLevel] parameter [LogFileSize] Value [104857600]|status_code[0x00000000(Good)]|message_id[03]
+2025-10-29T17:39:18.8939997Z|device_id[PORTLEVEL]|thread_id[TOOLKIT]|[PortLevel] parameter [TraceLevel] Value [3]|status_code[0x00000000(Good)]|message_id[03]
+2025-10-29T17:39:18.8939997Z|device_id[PORTLEVEL]|thread_id[TOOLKIT]|[PortLevel] parameter [DataChangeQueueLimit] Value [25000]|status_code[0x00000000(Good)]|message_id[03]
+2025-10-29T17:39:18.8939997Z|device_id[PORTLEVEL]|thread_id[TOOLKIT]|Toolkit is calling UserOpenPort...|status_code[0x00000000(Good)]|message_id[03]
+2025-10-29T17:39:18.8939997Z|device_id[PORTLEVEL]|thread_id[TOOLKIT]|Protocol Info for OPC UA Client have been initialized|status_code[0x00000000(Good)]|message_id[04]
+2025-10-29T17:39:18.9398386Z|device_id[PORTLEVEL]|thread_id[TOOLKIT]|OpcUaClient::UserValidatePointsBegin: Point Validation Beginning...|status_code[0x00000000(Good)]|message_id[034]
+2025-10-29T17:39:18.9438471Z|device_id[PORTLEVEL]|thread_id[TOOLKIT]|OpcUaClient::UserValidatePointsBegin: Point Validation Complete.|status_code[0x00000000(Good)]|message_id[034]
+2025-10-29T17:52:14.3665277Z|device_id[PORTLEVEL]|thread_id[TOOLKIT]|CIMPLICITY has initiated a shutdown of the OPC UA client.|status_code[0x00000000(Good)]|message_id[04]
+2025-10-29T17:52:14.3665277Z|device_id[PORTLEVEL]|thread_id[TOOLKIT]|Expect another PORTLEVEL message indicating shutdown completion...|status_code[0x00000000(Good)]|message_id[04]
+2025-10-29T17:52:14.3665277Z|device_id[PORTLEVEL]|thread_id[TOOLKIT]|Calling Disconnect for each device...|status_code[0x00000000(Good)]|message_id[06]
+2025-10-29T17:52:14.3665277Z|device_id[PORTLEVEL]|thread_id[TOOLKIT]|Waiting until all 1 devices are disconnected. for now 1 devices are pending|status_code[0x00000000(Good)]|message_id[06]
+2025-10-29T17:52:14.3752058Z|device_id[PORTLEVEL]|thread_id[TOOLKIT]|Disconnect complete. Clearing point read queue...|status_code[0x00000000(Good)]|message_id[07]
+2025-10-29T17:52:14.3752058Z|device_id[PORTLEVEL]|thread_id[TOOLKIT]|Point read queue has 0 records to clear ...|status_code[0x00000000(Good)]|message_id[07]
+2025-10-29T17:52:14.3752058Z|device_id[PORTLEVEL]|thread_id[TOOLKIT]|Clearing point read queue complete! Clearing point write queue...|status_code[0x00000000(Good)]|message_id[07]
+2025-10-29T17:52:14.3752058Z|device_id[PORTLEVEL]|thread_id[TOOLKIT]|Point write queue has 0 records to clear ...|status_code[0x00000000(Good)]|message_id[07]
+2025-10-29T17:52:14.3752058Z|device_id[PORTLEVEL]|thread_id[TOOLKIT]|Point write queue cleared.|status_code[0x00000000(Good)]|message_id[08]
+2025-10-29T17:52:14.3752058Z|device_id[PORTLEVEL]|thread_id[TOOLKIT]|OPC UA Client shutdown complete.|status_code[0x00000000(Good)]|message_id[012]
+2025-10-29T17:52:14.3752058Z|device_id[PORTLEVEL]|thread_id[TOOLKIT]|Termination of OPC UA Client succeeded|status_code[0x00000000(Good)]|message_id[0999]
+========== Wed Oct 29 14:52:14 2025:TRACE FILE TAIL ==========
+C:\Users\vsaon\OneDrive\Documents\Godelius\aire_comprimido\HMI_aire_comprimido\log\MASTER_UA_0.LOG
 ---------------------------------------------------------------------

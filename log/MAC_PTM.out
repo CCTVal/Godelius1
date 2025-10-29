@@ -1,4 +1,4 @@
-PID: 25216, 0x6280
+PID: 11292, 0x2c1c
 Service ID: MASTER_PTM0_RP
 Process ID: MASTER_PTM0_RP
 Hash size: PTMRP_AP_ID_HASH_SIZE == 400
@@ -26,13 +26,13 @@ Hash size: PTMRP_DELAYLOAD_POINT_HASH_SIZE == 509
 Hash size: PTMRP_MEAS_UNIT_HASH_SIZE == 223
 Hash size: PTMRP_AP_REQ_HASH_SIZE == 37831
           Date/Time(UTC);  Status;                        Procedure;               Source;       Code;  Reference;  Thread ID; Message 
-2025-10-28T18:07:40.9526; success; CimClassManager_InitializeClassC;              Unknown;          0;          0;      16132; Time taken for InitializeClassCaching (  0.023 seconds); 
-2025-10-28T18:07:41.0774; success;                       ptmrp_main;              Unknown;          0;          0;      16132; ptm_rp is ready to process requests; Time taken for initialization( 6.098 seconds); 
+2025-10-29T17:39:02.0293; success; CimClassManager_InitializeClassC;              Unknown;          0;          0;      14332; Time taken for InitializeClassCaching (  0.004 seconds); 
+2025-10-29T17:39:02.1456; success;                       ptmrp_main;              Unknown;          0;          0;      14332; ptm_rp is ready to process requests; Time taken for initialization( 5.826 seconds); 
 MASTER_UA_0 queuesize set to 8 messages
 Hash Table for PTMRP_AP_ID_HASH_SIZE has size:[409], item count:[1]
 Hash Table for PTMRP_DP_ID_HASH_SIZE has size:[13], item count:[0]
 Hash Table for PTMRP_DEVCOM_HASH_SIZE has size:[307], item count:[1]
-Hash Table for PTMRP_POINT_HASH_SIZE has size:[1031], item count:[80]
+Hash Table for PTMRP_POINT_HASH_SIZE has size:[1031], item count:[81]
 Hash Table for PTMRP_FR_HASH_SIZE has size:[211], item count:[2]
 Hash Table for PTMRP_ALARM_MGR_HASH_SIZE has size:[13], item count:[1]
 Hash Table for PTMRP_ALARM_HASH_SIZE has size:[211], item count:[1]

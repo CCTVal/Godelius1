@@ -200,8 +200,8 @@
             "Index" : 0,
             "MonitoredItems" : [],
             "NumberOfBadItems" : 0,
-            "NumberOfGoodItems" : 21,
-            "NumberOfItems" : 21
+            "NumberOfGoodItems" : 22,
+            "NumberOfItems" : 22
          },
          "IsUnsolicited" : true,
          "LifeTimeCount" : 180,
@@ -216,8 +216,8 @@
       }
    ],
    "TotalNumberOfBadItems" : 0,
-   "TotalNumberOfGoodItems" : 21,
-   "TotalNumberOfItems" : 21,
+   "TotalNumberOfGoodItems" : 22,
+   "TotalNumberOfItems" : 22,
    "UaSessionSettings" : 
    {
       "BrowsingSettings" : 
@@ -236,8 +236,8 @@
          "InstanceCertificateConfig" : 
          {
             "GenerateSelfSigned" : true,
-            "OpenSslCertificateFileName" : "C:\\Users\\vsaon\\OneDrive\\Documents\\Godelius\\cimplicity tests\\LuisTest\\\\pki\\own\\certs\\CimOpcUaServer.CELEUM.der",
-            "OpenSslCertificatePrivateKeyFileName" : "C:\\Users\\vsaon\\OneDrive\\Documents\\Godelius\\cimplicity tests\\LuisTest\\\\pki\\own\\private\\CimOpcUaServer.CELEUM.pem",
+            "OpenSslCertificateFileName" : "C:\\Users\\vsaon\\OneDrive\\Documents\\Godelius\\aire_comprimido\\HMI_aire_comprimido\\\\pki\\own\\certs\\CimOpcUaServer.CELEUM.der",
+            "OpenSslCertificatePrivateKeyFileName" : "C:\\Users\\vsaon\\OneDrive\\Documents\\Godelius\\aire_comprimido\\HMI_aire_comprimido\\\\pki\\own\\private\\CimOpcUaServer.CELEUM.pem",
             "SelfSignedCertificateFields" : 
             {
                "Country" : "CA",
@@ -258,19 +258,19 @@
          },
          "PkiConfiguration" : 
          {
-            "OpenSslIssuersCertificatesLocation" : "C:\\Users\\vsaon\\OneDrive\\Documents\\Godelius\\cimplicity tests\\LuisTest\\\\pki\\issuers\\certs\\",
-            "OpenSslIssuersRevocationListLocation" : "C:\\Users\\vsaon\\OneDrive\\Documents\\Godelius\\cimplicity tests\\LuisTest\\\\pki\\issuers\\crl\\",
-            "OpenSslRevokedCertificateslocation" : "C:\\Users\\vsaon\\OneDrive\\Documents\\Godelius\\cimplicity tests\\LuisTest\\\\pki\\trusted\\crl\\",
-            "OpenSslTrustedCertificatesLocation" : "C:\\Users\\vsaon\\OneDrive\\Documents\\Godelius\\cimplicity tests\\LuisTest\\\\pki\\trusted\\certs\\",
+            "OpenSslIssuersCertificatesLocation" : "C:\\Users\\vsaon\\OneDrive\\Documents\\Godelius\\aire_comprimido\\HMI_aire_comprimido\\\\pki\\issuers\\certs\\",
+            "OpenSslIssuersRevocationListLocation" : "C:\\Users\\vsaon\\OneDrive\\Documents\\Godelius\\aire_comprimido\\HMI_aire_comprimido\\\\pki\\issuers\\crl\\",
+            "OpenSslRevokedCertificateslocation" : "C:\\Users\\vsaon\\OneDrive\\Documents\\Godelius\\aire_comprimido\\HMI_aire_comprimido\\\\pki\\trusted\\crl\\",
+            "OpenSslTrustedCertificatesLocation" : "C:\\Users\\vsaon\\OneDrive\\Documents\\Godelius\\aire_comprimido\\HMI_aire_comprimido\\\\pki\\trusted\\certs\\",
             "StoreType" : "Directory",
             "WindowsCertificateStoreName" : "UA Applications",
             "WindowsIssuersCertificateStoreName" : "UA Applications",
             "WindowsStoreLocationType" : "LocalMachine"
          },
-         "RejectedCertificatesLocation" : "C:\\Users\\vsaon\\OneDrive\\Documents\\Godelius\\cimplicity tests\\LuisTest\\\\pki\\rejected",
+         "RejectedCertificatesLocation" : "C:\\Users\\vsaon\\OneDrive\\Documents\\Godelius\\aire_comprimido\\HMI_aire_comprimido\\\\pki\\rejected",
          "ServerName" : "",
          "ServerUri" : "",
-         "endpointUrl" : "opc.tcp://192.168.0.100:4840"
+         "endpointUrl" : "opc.tcp://192.168.0.103:4840"
       },
       "UserIdentity" : 
       {
