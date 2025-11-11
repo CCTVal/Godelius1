@@ -1,6 +1,8 @@
-PID: 12608, 0x3140
+PID: 9236, 0x2414
 Service ID: UR_RP
 Process ID: UR_RP
           Date/Time(UTC);  Status;                        Procedure;               Source;       Code;  Reference;  Thread ID; Message 
-2025-10-29T14:39:37.2666; success;                         urdriver;              Unknown;          0;          0;      12136; User registration finished reading configuration; Time taken ( 0.049 seconds); 
-2025-10-29T14:39:37.2689; success;                         urdriver;              Unknown;          0;          0;      12136; User registration initialization complete, ready to process requests; Time taken ( 0.051 seconds); 
+2025-11-11T17:58:15.8774; success;                         urdriver;              Unknown;          0;          0;      19412; User registration finished reading configuration; Time taken ( 0.026 seconds); 
+2025-11-11T17:58:15.8791; success;                         urdriver;              Unknown;          0;          0;      19412; User registration initialization complete, ready to process requests; Time taken ( 0.028 seconds); 
+
+ PA_DEBUG:Is Proficy Authentication Enabled: 0

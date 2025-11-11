@@ -29,10 +29,10 @@
             "PkiConfiguration" : 
             {
                "#include" : "%CIMPATH%\\..\\data\\OpcUaCertificatesConfig.json:CertificatesConfiguration.PkiConfiguration",
-               "OpenSslIssuersCertificatesLocation" : "C:\\Users\\vsaon\\OneDrive\\Documents\\Godelius\\cimplicity tests\\LuisTest\\\\pki\\issuers\\certs\\",
-               "OpenSslIssuersRevocationListLocation" : "C:\\Users\\vsaon\\OneDrive\\Documents\\Godelius\\cimplicity tests\\LuisTest\\\\pki\\issuers\\crl\\",
-               "OpenSslRevokedCertificateslocation" : "C:\\Users\\vsaon\\OneDrive\\Documents\\Godelius\\cimplicity tests\\LuisTest\\\\pki\\trusted\\crl\\",
-               "OpenSslTrustedCertificatesLocation" : "C:\\Users\\vsaon\\OneDrive\\Documents\\Godelius\\cimplicity tests\\LuisTest\\\\pki\\trusted\\certs\\",
+               "OpenSslIssuersCertificatesLocation" : "C:\\Users\\vsaon\\OneDrive\\Documents\\Godelius\\aire_comprimido\\HMI_aire_comprimido\\\\pki\\issuers\\certs\\",
+               "OpenSslIssuersRevocationListLocation" : "C:\\Users\\vsaon\\OneDrive\\Documents\\Godelius\\aire_comprimido\\HMI_aire_comprimido\\\\pki\\issuers\\crl\\",
+               "OpenSslRevokedCertificateslocation" : "C:\\Users\\vsaon\\OneDrive\\Documents\\Godelius\\aire_comprimido\\HMI_aire_comprimido\\\\pki\\trusted\\crl\\",
+               "OpenSslTrustedCertificatesLocation" : "C:\\Users\\vsaon\\OneDrive\\Documents\\Godelius\\aire_comprimido\\HMI_aire_comprimido\\\\pki\\trusted\\certs\\",
                "StoreType" : "Directory",
                "WindowsCertificateStoreName" : "UA Applications",
                "WindowsIssuersCertificateStoreName" : "UA Applications",
@@ -369,10 +369,10 @@
                         },
                         "PkiConfiguration" : 
                         {
-                           "OpenSslIssuersCertificatesLocation" : "C:\\Users\\vsaon\\OneDrive\\Documents\\Godelius\\cimplicity tests\\LuisTest\\\\pki\\issuers\\certs\\",
-                           "OpenSslIssuersRevocationListLocation" : "C:\\Users\\vsaon\\OneDrive\\Documents\\Godelius\\cimplicity tests\\LuisTest\\\\pki\\issuers\\crl\\",
-                           "OpenSslRevokedCertificateslocation" : "C:\\Users\\vsaon\\OneDrive\\Documents\\Godelius\\cimplicity tests\\LuisTest\\\\pki\\trusted\\crl\\",
-                           "OpenSslTrustedCertificatesLocation" : "C:\\Users\\vsaon\\OneDrive\\Documents\\Godelius\\cimplicity tests\\LuisTest\\\\pki\\trusted\\certs\\",
+                           "OpenSslIssuersCertificatesLocation" : "C:\\Users\\vsaon\\OneDrive\\Documents\\Godelius\\aire_comprimido\\HMI_aire_comprimido\\\\pki\\issuers\\certs\\",
+                           "OpenSslIssuersRevocationListLocation" : "C:\\Users\\vsaon\\OneDrive\\Documents\\Godelius\\aire_comprimido\\HMI_aire_comprimido\\\\pki\\issuers\\crl\\",
+                           "OpenSslRevokedCertificateslocation" : "C:\\Users\\vsaon\\OneDrive\\Documents\\Godelius\\aire_comprimido\\HMI_aire_comprimido\\\\pki\\trusted\\crl\\",
+                           "OpenSslTrustedCertificatesLocation" : "C:\\Users\\vsaon\\OneDrive\\Documents\\Godelius\\aire_comprimido\\HMI_aire_comprimido\\\\pki\\trusted\\certs\\",
                            "StoreType" : "Directory",
                            "WindowsCertificateStoreName" : "UA Applications",
                            "WindowsIssuersCertificateStoreName" : "Root",
@@ -519,10 +519,10 @@
                         },
                         "PkiConfiguration" : 
                         {
-                           "OpenSslIssuersCertificatesLocation" : "C:\\Users\\vsaon\\OneDrive\\Documents\\Godelius\\cimplicity tests\\LuisTest\\\\pki\\issuers\\certs\\",
-                           "OpenSslIssuersRevocationListLocation" : "C:\\Users\\vsaon\\OneDrive\\Documents\\Godelius\\cimplicity tests\\LuisTest\\\\pki\\issuers\\crl\\",
-                           "OpenSslRevokedCertificateslocation" : "C:\\Users\\vsaon\\OneDrive\\Documents\\Godelius\\cimplicity tests\\LuisTest\\\\pki\\trusted\\crl\\",
-                           "OpenSslTrustedCertificatesLocation" : "C:\\Users\\vsaon\\OneDrive\\Documents\\Godelius\\cimplicity tests\\LuisTest\\\\pki\\trusted\\certs\\",
+                           "OpenSslIssuersCertificatesLocation" : "C:\\Users\\vsaon\\OneDrive\\Documents\\Godelius\\aire_comprimido\\HMI_aire_comprimido\\\\pki\\issuers\\certs\\",
+                           "OpenSslIssuersRevocationListLocation" : "C:\\Users\\vsaon\\OneDrive\\Documents\\Godelius\\aire_comprimido\\HMI_aire_comprimido\\\\pki\\issuers\\crl\\",
+                           "OpenSslRevokedCertificateslocation" : "C:\\Users\\vsaon\\OneDrive\\Documents\\Godelius\\aire_comprimido\\HMI_aire_comprimido\\\\pki\\trusted\\crl\\",
+                           "OpenSslTrustedCertificatesLocation" : "C:\\Users\\vsaon\\OneDrive\\Documents\\Godelius\\aire_comprimido\\HMI_aire_comprimido\\\\pki\\trusted\\certs\\",
                            "StoreType" : "Directory",
                            "WindowsCertificateStoreName" : "UA Applications",
                            "WindowsIssuersCertificateStoreName" : "UA Applications",
@@ -705,7 +705,7 @@
                            "SecurityPolicy" : "http://opcfoundation.org/UA/SecurityPolicy#None"
                         },
                         "DiscoveryType" : 0,
-                        "DiscoveryUrl" : "opc.tcp://192.168.0.100:4840",
+                        "DiscoveryUrl" : "opc.tcp://192.168.0.103:4840",
                         "InstanceCertificateConfig" : 
                         {
                            "#include" : "%CIMPATH%\\..\\data\\OpcUaCertificatesConfig.json:CertificatesConfiguration.InstanceCertificateConfig"
