@@ -1,11 +1,11 @@
-========== Thu Nov 13 10:31:09 2025:TRACE FILE HEAD ==========
+========== Wed Nov 19 09:37:29 2025:TRACE FILE HEAD ==========
 C:\Users\vsaon\OneDrive\Documents\Godelius\aire_comprimido\HMI_aire_comprimido\log\MASTER_UA_0_LUIS1.LOG
 ---------------------------------------------------------------------
-2025-11-13T13:31:09.8461766Z|device_id[LUIS1]|thread_id[TOOLKIT]|Device [LUIS1]: trace level = [3], trace sections = [0xff]|status_code[0x00000000(Good)]|message_id[04096]
-2025-11-13T13:31:09.8461766Z|device_id[LUIS1]|thread_id[TOOLKIT]|Trace option [TraceLevel] = [3]|status_code[0x00000000(Good)]|message_id[04097]
-2025-11-13T13:31:09.8461766Z|device_id[LUIS1]|thread_id[TOOLKIT]|Trace Sections = [32255]|status_code[0x00000000(Good)]|message_id[04097]
-2025-11-13T13:31:09.8461766Z|device_id[LUIS1]|thread_id[TOOLKIT]|Initializing OPC UA Device with address [opc.tcp://192.168.0.103:4840]...|status_code[0x00000000(Good)]|message_id[04106]
-2025-11-13T13:31:09.8461766Z|device_id[LUIS1]|thread_id[TOOLKIT]|OPC UA Device Initialization Complete.|status_code[0x00000000(Good)]|message_id[04136]
-2025-11-13T13:31:14.8984274Z|device_id[LUIS1]|thread_id[SERVER]|Device connection status is changed to OpenSecureChannel, 0x800a0000[BadTimeout], server side|status_code[0x800A0000(BadTimeout)]|message_id[05086]
-2025-11-13T13:31:14.9103547Z|device_id[LUIS1]|thread_id[CONNECTION]|Could not connect to OPC UA Server:[opc.tcp://192.168.0.103:4840], error [BadNoCommunication]|status_code[0x80310000(BadNoCommunication)]|message_id[04686]
-2025-11-13T14:18:05.3103439Z|device_id[LUIS1]|thread_id[TOOLKIT]|Device has been deleted|status_code[0x00000000(Good)]|message_id[04136]
+2025-11-19T12:37:29.9659494Z|device_id[LUIS1]|thread_id[TOOLKIT]|Device [LUIS1]: trace level = [3], trace sections = [0xff]|status_code[0x00000000(Good)]|message_id[04096]
+2025-11-19T12:37:29.9659494Z|device_id[LUIS1]|thread_id[TOOLKIT]|Trace option [TraceLevel] = [3]|status_code[0x00000000(Good)]|message_id[04097]
+2025-11-19T12:37:29.9659494Z|device_id[LUIS1]|thread_id[TOOLKIT]|Trace Sections = [32255]|status_code[0x00000000(Good)]|message_id[04097]
+2025-11-19T12:37:29.9659494Z|device_id[LUIS1]|thread_id[TOOLKIT]|Initializing OPC UA Device with address [opc.tcp://192.168.0.103:4840]...|status_code[0x00000000(Good)]|message_id[04106]
+2025-11-19T12:37:29.9659494Z|device_id[LUIS1]|thread_id[TOOLKIT]|OPC UA Device Initialization Complete.|status_code[0x00000000(Good)]|message_id[04136]
+2025-11-19T12:37:35.0095906Z|device_id[LUIS1]|thread_id[SERVER]|Device connection status is changed to OpenSecureChannel, 0x800a0000[BadTimeout], server side|status_code[0x800A0000(BadTimeout)]|message_id[05086]
+2025-11-19T12:37:35.0245897Z|device_id[LUIS1]|thread_id[CONNECTION]|Could not connect to OPC UA Server:[opc.tcp://192.168.0.103:4840], error [BadNoCommunication]|status_code[0x80310000(BadNoCommunication)]|message_id[04686]
+2025-11-19T13:00:01.7930268Z|device_id[LUIS1]|thread_id[TOOLKIT]|Device has been deleted|status_code[0x00000000(Good)]|message_id[04136]
