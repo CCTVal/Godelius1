@@ -1,4 +1,4 @@
-PID: 23712, 0x5ca0
+PID: 21972, 0x55d4
 Service ID: AMRP
 Process ID: AMRP
 Hash size: AMRP_ALARM_TYPE_HASH_SIZE == 31
@@ -9,9 +9,9 @@ Hash size: AMRP_ALARM_DEF_HASH_SIZE == 1009
 Hash size: AMRP_USER_HASH_SIZE == 47
 Hash size: AMRP_ALRM_BLK_GROUP_HASH_SIZE == 17
           Date/Time(UTC);  Status;                        Procedure;               Source;       Code;  Reference;  Thread ID; Message 
-2025-11-18T17:22:25.2566; success;                          am_init;              Unknown;          0;          0;       7176; am_rp finished reading configuration; Time taken( 1.133 seconds); 
-2025-11-18T17:22:25.2616; success;                          am_init;              Unknown;          0;          0;       7176; am_rp finished registering with UR; Time taken( 0.005 seconds); 
-2025-11-18T17:22:25.2627; success;                          am_init;              Unknown;          0;          0;       7176; am_rp finished connecting to alarm providers; Time taken( 0.001 seconds); 
-2025-11-18T17:22:25.2638; success;                        amrp_main;              Unknown;          0;          0;       7176; am_rp finished am_find_master ; Time taken( 0.000 seconds); 
-2025-11-18T17:22:25.2694; success;                        amrp_main;              Unknown;          0;          0;       7176; am_rp finished am_ptm_inform ; Time taken( 0.005 seconds); 
-2025-11-18T17:22:25.2694; success;                        amrp_main;              Unknown;          0;          0;       7176; am_rp is ready to process requests; Total time taken for initialization( 1.147 seconds); 
+2025-11-19T13:08:21.2784; success;                          am_init;              Unknown;          0;          0;      26992; am_rp finished reading configuration; Time taken( 0.610 seconds); 
+2025-11-19T13:08:21.2819; success;                          am_init;              Unknown;          0;          0;      26992; am_rp finished registering with UR; Time taken( 0.004 seconds); 
+2025-11-19T13:08:21.2830; success;                          am_init;              Unknown;          0;          0;      26992; am_rp finished connecting to alarm providers; Time taken( 0.001 seconds); 
+2025-11-19T13:08:21.2830; success;                        amrp_main;              Unknown;          0;          0;      26992; am_rp finished am_find_master ; Time taken( 0.000 seconds); 
+2025-11-19T13:08:21.2855; success;                        amrp_main;              Unknown;          0;          0;      26992; am_rp finished am_ptm_inform ; Time taken( 0.001 seconds); 
+2025-11-19T13:08:21.2855; success;                        amrp_main;              Unknown;          0;          0;      26992; am_rp is ready to process requests; Total time taken for initialization( 0.618 seconds); 
