@@ -1,7 +1,3 @@
-PID: 14972, 0x3a7c
+PID: 11164, 0x2b9c
 Service ID: EM_RP
 Process ID: EM_RP
-CIpcShmConn::Attach @ OpenFileMapping Err:2 Perhaps CIMPLICITY system stopped running?
-CIpcShmConn::Attach @ OpenFileMapping Err:2 Perhaps CIMPLICITY system stopped running?
-CIpcShmConn::Attach @ OpenFileMapping Err:2 Perhaps CIMPLICITY system stopped running?
-CIpcShmConn::Attach @ OpenFileMapping Err:2 Perhaps CIMPLICITY system stopped running?
